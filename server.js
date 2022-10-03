@@ -47,10 +47,14 @@ server.use((req, res, next) => {
     return next();
   }
 
+  if (req.path === '/users' && req.method === 'GET') {
+    return next()
+  }
+   
   // для всех остальных маршрутов запрещаем
-  // if (!req.headers.authorization) {
-  //   return res.status(403).json({ message: 'AUTH ERROR' });
-  // }
+  if (!req.headers.authorization) {
+    return res.status(403).json({ message: 'AUTH ERROR' });
+  }
   next();
 });
 server.use(router);
