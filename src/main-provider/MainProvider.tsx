@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import MyToastContainer from '../components/ui/MyToast/MyToastContainer';
+import AppRouter from '../router/AppRouter';
 import { store } from '../store/store';
 
 
@@ -25,6 +26,7 @@ const MainProvider:FC<MainProviderProps> = ({children}) => {
         <QueryClientProvider client={queryClient}>
           {children}
           <MyToastContainer />
+          <AppRouter />
         </QueryClientProvider>
       </Provider>
     </BrowserRouter>
