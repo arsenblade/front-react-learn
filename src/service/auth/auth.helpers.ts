@@ -1,0 +1,17 @@
+import { IUserState } from "../../store/auth/auth.interface"
+import { IUser } from "../../types/user.types"
+
+export const saveTokenStorage = (token: string, user: IUser) => {
+  localStorage.setItem('accessToken', token)
+  const userStorage: IUserState = {
+    pointQuestions: user.pointQuestions,
+    avatar: user.avatar,
+    name: user.name,
+    id: user.id
+  }
+  localStorage.setItem('user', JSON.stringify(userStorage))
+}
+
+export const removeTokenStorage = () => {
+  localStorage.removeItem('accessToken')
+}

@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'TT-norms-pro', sans-serif;
+  height: 100vh;
+  background-color: $blackBackground;
+
+  >div {
+    height: 100vh;
+  }
+}
+
+.app {
+  height: max-content;
+  min-height: 100vh;
+}
+
+
+.error404 {
+  color: rgba($color: white, $alpha: 0.8);
+  font-size: 50px;
+  line-height: 56px;
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

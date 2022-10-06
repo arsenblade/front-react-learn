@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "arsen@mail.ru",
+      "password": "1234",
+      "name": "Yen",
+      "avatar": "/avatar",
+      "pointQuestions": [
+        {
+          "idQuestions": "2",
+          "points": "6"
+        }
+      ]
+    }
+  ],
+  "allQuestions": [
+    {
+      "id": "2",
+      "currentQuestions": [
+        {
+          "id": "3",
+          "title": "Title",
+          "correctAnswerId": "5",
+          "allAnswers": [
+            {
+              "id": "5",
+              "title": "Answer"
+            }
+          ] 
+        }
+      ]
+    }
+  ],
+  "topicsOfStudy": [
+    {
+      "id": "4",
+      "titleTopic": "Topic",
+      "pictureTopicUrl": "/picture",
+      "passedTopic": false,
+      "videoUrl": "/video",
+      "relatedQuestionsId": "2"
+    }
+  ]
+}
