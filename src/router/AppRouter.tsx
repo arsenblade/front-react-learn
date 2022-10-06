@@ -5,7 +5,7 @@ import { publicRoutes } from './Routes'
 const AppRouter = () => {
   return (
     <Routes>
-      {publicRoutes.map(({path, Component}) => <Route path={path} element={< Component/>} />)}
+      {publicRoutes.map(({path, Component}) => <Route key={path} path={path} element={< Component/>} />)}
     </Routes>
   )
 }
