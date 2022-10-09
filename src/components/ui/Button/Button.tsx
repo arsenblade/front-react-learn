@@ -1,32 +1,28 @@
-import { ButtonHTMLAttributes, FC, ReactNode, useState } from 'react'
+import { FC, ReactNode } from 'react'
 import cn from 'classnames'
 import styles from './Button.module.scss'
 
-interface IInput extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButton {
   children: ReactNode
+  className?: string,
   color: 'Pink' | 'White'
 }
 
 
-const Button:FC<IInput> = ({color, className, children, ...rest}) => {
-  const [valueHover, setValueHover] = useState<'noHover' | 'onHover' | 'outHover'>('noHover')
-  
-  const outHover = () => {
-    setValueHover('outHover')
-  }
+const Button:FC<IButton> = ({color, className, children}) => {
 
   return (
-    <button onMouseEnter={() => setValueHover('onHover')} onMouseLeave={() => outHover()} className={cn(styles.btn, className, {
-      [styles.btnWhite]: color === 'White'
-    })} {...rest}>
-      <div className={cn(styles.noHover, {
-        [styles.onHoverPink]: valueHover === 'onHover' && color === 'Pink',
-        [styles.outHoverPink]: valueHover === 'outHover' && color === 'Pink',
-        [styles.onHoverWhite]: valueHover === 'onHover' && color === 'White',
-        [styles.outHoverWhite]: valueHover === 'outHover' && color === 'White',
-      })}></div>
-      <span style={{zIndex: 5}}>{children}</span>
-    </button>
+    <div className={cn(styles.btn, {
+      [styles.btnWhite]: color === 'White',
+      [styles.btnPink]: color === 'Pink',
+      [`${className}`]: className && className
+    })}>
+      {children}
+      <span className={styles.spanOne}></span>
+      <span className={styles.spanTwo}></span>
+      <span className={styles.spanThree}></span>
+      <span className={styles.spanFour}></span>
+    </div>
   )
 }
 

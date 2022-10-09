@@ -12,7 +12,7 @@ const initialState: IInitialStateAuth  = {
 }
 
 export const authSlice = createSlice({
-  name: 'user',
+  name: 'auth',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
