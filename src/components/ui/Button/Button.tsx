@@ -8,7 +8,6 @@ interface IButton {
   color: 'Pink' | 'White'
 }
 
-
 const Button:FC<IButton> = ({color, className, children}) => {
 
   return (
