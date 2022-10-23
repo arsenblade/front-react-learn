@@ -1,0 +1,84 @@
+@import '../../../styles/variables.scss';
+
+.authContainer {
+  display: flex;
+  height: 100vh;
+  margin: auto;
+    
+}
+
+.authForm {
+  display: flex;
+  opacity: 0.9;
+  flex-direction: column;
+  color: white;
+  width: 400px;
+  padding: 25px;
+  margin: auto;
+  border-radius: 10px;
+
+  >h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    width: 100%;
+  }
+
+  .input {
+    margin: 5px 0;
+    padding: 5px;
+    &::placeholder {
+      color: rgba($color: rgb(0, 0, 0), $alpha: 0.6)
+    }
+  }
+
+  .errorText {
+    margin: 0;
+    margin-left: 10px;
+    color: #d50000;
+    font-size: 12px;
+  }
+  .btnContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    >a {
+        margin: 0 auto;
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+
+    @media(max-width: $mobileOnlyWidth) {
+      flex-direction: column;
+      >a {
+        order: 1;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .btnAuth {
+    margin: 0;
+    margin-left: auto;
+    width: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+}
