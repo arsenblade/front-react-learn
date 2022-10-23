@@ -1,8 +1,8 @@
-import React from 'react'
+import Auth from "../../components/screen/Auth/Auth"
 
 const RegistrationPage = () => {
   return (
-    <div>RegistrationPage</div>
+    <Auth type = 'registration'/>
   )
 }
 
