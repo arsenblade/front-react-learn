@@ -1,8 +1,8 @@
-import React from 'react'
+import Auth from '../../components/screen/Auth/Auth'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <Auth type = 'login'/>
   )
 }
 

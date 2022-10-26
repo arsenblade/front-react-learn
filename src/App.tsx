@@ -1,9 +1,11 @@
-import Button from "./components/ui/Button/Button";
+import MainProvider from './main-provider/MainProvider';
 
 function App() {
   return (
     <div className="app">
-
+      <MainProvider>
+        
+      </MainProvider>
     </div>
   );
 }

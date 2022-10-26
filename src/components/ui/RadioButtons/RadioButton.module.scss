@@ -1,0 +1,55 @@
+@import '../../../styles/variables.scss';
+
+.radioLabel {
+  margin: 7px 1px 0 0;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+}
+
+.radioInput {
+  display: none;
+}
+
+.fakeRadio {
+  border: 0px solid;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: #dadada;
+  cursor: pointer;
+  transition: 0.04s ease-in;
+}
+
+.fakeRadio::before {
+  width: 0.6em;
+  height: 0.6em;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  color: red;
+  background-image: url("../../../assets/img/check.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.12s ease-in;
+}
+
+.radioText {
+  margin: 0;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  color: #dadada;
+}
+
+.radioInput:checked + .fakeRadio::before {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.radioInput:checked + .fakeRadio {
+	background-color: $pink;
+}
