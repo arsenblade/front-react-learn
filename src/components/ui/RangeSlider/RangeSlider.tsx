@@ -29,7 +29,7 @@ const RangeSlider:FC<IRangeSlider> = ({values, setValues}) => {
                   width: "100%",
                   background: getTrackBackground({
                     values: values,
-                    colors: ["#FF44B4", "#FAFAFA"],
+                    colors: ["#8B4DFF", "#FAFAFA"],
                     min: 40,
                     max: 180
                   }),

@@ -1,0 +1,259 @@
+@import '../../../../styles/variables.scss';
+
+.afterLearnCourse {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('../../../../assets/img/rocket-pink.png') no-repeat 92% 0px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1440px;
+  color: white;
+  margin-bottom: 100px;
+
+  @media(max-width: 1050px) {
+    background: url('../../../../assets/img/rocket-pink-tablet.png') no-repeat 92% 0px;
+  }
+
+  @media(max-width: $tabletWidth) {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  @media(max-width: 800px) {
+    width: 640px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  @media(max-width: 600px) {
+    background: url('../../../../assets/img/rocket-pink-mobile.png') no-repeat 92% 0px;
+    width: 460px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  @media(max-width: $mobileOnlyWidth) {
+    width: 380px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .knowledgeAfterCourse {
+    margin-bottom: 80px;
+    z-index: 2;
+
+    @media(max-width: $tabletWidth) {
+      margin-bottom: 50px;
+    }
+
+    @media(max-width: 600px) {
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 46px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 1000px;
+
+      @media(max-width: 1300px) {
+        font-size: 46px;
+      }
+
+      @media(max-width: 1250px) {
+        font-size: 38px;
+        max-width: 900px;
+      }
+
+      @media(max-width: 1050px) {
+        font-size: 34px;
+        max-width: 800px;
+      }
+
+      @media(max-width: $tabletWidth) {
+        font-size: 40px;
+        max-width: 100%;
+      }
+
+      @media(max-width: 600px) {
+        font-size: 28px;
+      }
+    }
+
+    .knowledgeList {
+      margin: 0;
+      margin-left: 40px;
+      padding: 0;
+
+      @media(max-width: 800px) {
+        margin-left: 20px;
+      }
+
+      @media(max-width: 600px) {
+        margin: 0 auto;
+        list-style: none;
+      }
+
+
+      .knowledgeItem {
+        font-size: 30px;
+        margin-bottom: 15px;
+
+        @media(max-width: 800px) {
+          font-size: 26px;
+        }
+
+        @media(max-width: 600px) {
+          background-color: black;
+          padding: 10px 6px;
+          border-radius: 10px;
+          text-align: center;
+          color: $pink;
+        }
+
+        @media(max-width: $mobileOnlyWidth) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .salaryAfterCourse {
+    z-index: 2;
+
+    .title {
+      font-size: 46px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 900px;
+
+      @media(max-width: 1300px) {
+        font-size: 46px;
+      }
+
+      @media(max-width: 1250px) {
+        font-size: 38px;
+      }
+
+      @media(max-width: 1050px) {
+        font-size: 34px;
+      }
+
+      @media(max-width: $tabletWidth) {
+        font-size: 40px;
+      }
+
+      @media(max-width: 600px) {
+        font-size: 28px;
+      }
+    }
+
+    .salaryText {
+      font-size: 30px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 100px;
+
+      >span {
+        width: 274px;
+        font-size: 54px;
+        margin-left: 15px;
+        color: #8b4dff;
+        font-weight: 900;
+
+        @media(max-width: 800px) {
+          width: 224px;
+          font-size: 44px;
+        }
+
+        @media(max-width: 600px) {
+          width: 162px;
+          font-size: 32px;
+        }
+
+        @media(max-width: $mobileOnlyWidth) {
+          width: 142px;
+          font-size: 28px;
+          margin-left: 6px;
+        }
+      }
+
+      @media(max-width: 1250px) {
+        font-size: 26px;
+      }
+  
+      @media(max-width: 1050px) {
+        font-size: 24px;
+      }
+  
+      @media(max-width: $tabletWidth) {
+        font-size: 26px;
+      }
+  
+      @media(max-width: 600px) {
+        font-size: 20px;
+      }
+
+      @media(max-width: $mobileOnlyWidth) {
+        font-size: 18px;
+      }
+    }
+
+    .rangeSlider {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .junLvlText {
+        display: block;
+        position: absolute;
+        font-size: 32px;
+        top: -70px;
+        left: 10%;
+        transform: translate(-50%, 0);
+
+        @media(max-width: 600px) {
+          font-size: 26px;
+        }
+      }
+
+      .midLvlText {
+        display: block;
+        position: absolute;
+        font-size: 32px;
+        top: -70px;
+        left: 44.7%;
+        transform: translate(-50%, 0);
+
+        @media(max-width: 600px) {
+          font-size: 26px;
+        }
+      }
+
+      .senLvlText {
+        display: block;
+        position: absolute;
+        font-size: 32px;
+        top: -70px;
+        left: 89.8%;
+        transform: translate(-50%, 0);
+
+        @media(max-width: 600px) {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
