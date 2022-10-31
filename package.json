@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.38.0",
     "react-query": "^3.39.2",
+    "react-range": "^1.8.14",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",

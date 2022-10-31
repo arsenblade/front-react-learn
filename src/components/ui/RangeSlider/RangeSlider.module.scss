@@ -1,0 +1,110 @@
+@import '../../../styles/variables.scss';
+
+.track {
+  position: relative;
+  height: 8px;
+  width: 80%;
+  background-color: white;
+
+  @media(max-width: 600px) {
+    height: 14px;
+  }
+
+  .junLvl {
+    display: block;
+    position: absolute;
+    width: 0.3em;
+    height: 40px;
+    background-color: $pink;
+    z-index: 10;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+
+    @media(max-width: 600px) {
+      width: 0.2em;
+    }
+  }
+
+  .junLvlWhite {
+    background-color: white;
+  }
+
+  .midLvl {
+    display: block;
+    position: absolute;
+    width: 0.3em;
+    height: 40px;
+    background-color: $pink;
+    z-index: 10;
+    top: 50%;
+    left: 42.7%;
+    transform: translate(0, -50%);
+
+    @media(max-width: 600px) {
+      width: 0.2em;
+    }
+  }
+
+  .midLvlWhite {
+    background-color: white;
+  }
+
+  .senLvl {
+    display: block;
+    position: absolute;
+    width: 0.3em;
+    height: 40px;
+    background-color: $pink;
+    z-index: 10;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+
+    @media(max-width: 600px) {
+      width: 0.2em;
+    }
+  }
+
+  .senLvlWhite {
+    background-color: white;
+  }
+
+}
+
+.thumb {
+  position: relative;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #8B4DFF;
+  outline: none;
+  border: none;
+  border: 2px solid white;
+
+  &:active {
+    border: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.rangeBar {
+  height: 8px;
+
+  @media(max-width: 600px) {
+    height: 14px;
+  }
+}
