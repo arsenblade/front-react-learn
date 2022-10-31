@@ -1,10 +1,10 @@
 @import '../../../styles/variables.scss';
 
 .authContainer {
+  position: relative;
   display: flex;
   height: 100vh;
-  margin: auto;
-    
+  margin: auto;    
 }
 
 .authForm {

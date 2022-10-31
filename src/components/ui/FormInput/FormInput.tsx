@@ -1,12 +1,12 @@
-import { FC, InputHTMLAttributes, ReactNode } from 'react'
+import React, { FC, InputHTMLAttributes } from 'react'
 import styles from './FormInput.module.scss'
 import cn from 'classnames'
 
 interface IFormInput extends InputHTMLAttributes<HTMLInputElement> {}
-const FormInput:FC<IFormInput> = ({className, ...rest}) => {
+const FormInput = React.forwardRef<HTMLInputElement, IFormInput>(({className, ...rest}, ref) => {
   return (
-    <input className={cn(styles.formInput, className)} {...rest}/>
+    <input ref={ref} className={cn(styles.formInput, className)} {...rest}/>
   )
-}
+})
 
 export default FormInput;
