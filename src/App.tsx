@@ -4,7 +4,6 @@ function App() {
   return (
     <div className="app">
       <MainProvider>
-        
       </MainProvider>
     </div>
   );
