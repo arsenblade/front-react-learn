@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { MyToast } from "../../components/ui/MyToast/MyToast";
 import { getStoreLocal } from "../../utils/getStoreLocal";
-import { login, logout, register } from "./auth.actions";
+import { login, logout, registration } from "./auth.actions";
 import { IInitialStateAuth } from "./auth.interface";
 
 
@@ -16,10 +16,10 @@ export const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(register.pending, (state) => {
+    builder.addCase(registration.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(register.fulfilled, (state, {payload}) => {
+    .addCase(registration.fulfilled, (state, {payload}) => {
       state.isLoading = false;
       state.user = {
         name: payload.name,
@@ -29,7 +29,7 @@ export const authSlice = createSlice({
       }
       MyToast('Вы успешно зарегистрировались', true)
     })
-    .addCase(register.rejected, (state) => {
+    .addCase(registration.rejected, (state) => {
       state.isLoading = false;
       state.user = null
       MyToast('Произошла ошибка при регистрации', false)

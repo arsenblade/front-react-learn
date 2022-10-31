@@ -47,7 +47,7 @@ server.use((req, res, next) => {
     return next();
   }
 
-  if (req.path === '/users' && req.method === 'GET') {
+  if (req.path === '/users') {
     return next()
   }
    
