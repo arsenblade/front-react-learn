@@ -1,0 +1,210 @@
+@import '../../../styles/variables.scss';
+
+.statTableContainer {
+  position: relative;
+  width: 100%;
+  height: max-content;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: 49px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    z-index: 2;
+  }
+
+  .statTable {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 300px;
+    column-gap: 20px;
+    overflow-x: auto;
+    &::-webkit-scrollbar  {
+      background-color: rgba($color: $blackBackground, $alpha: 1);
+      height: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $violet;
+    }
+  
+    .statBarContainer {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      height: 250px;
+  
+      .statBar {
+        position: relative;
+        width: 40px;
+        background-color: $pink;
+        cursor: pointer;
+  
+        .valueBar {
+          font-size: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+  
+        .valueZero {
+          top: -14px;
+        }
+      }
+  
+      .value10 {
+        height: 10%;
+        animation: height-10 .4s forwards;
+      }
+  
+      .value20 {
+        height: 20%;
+        animation: height-20 .4s forwards;
+      }
+  
+      .value30 {
+        height: 30%;
+        animation: height-30 .4s forwards;
+      }
+  
+      .value40 {
+        height: 40%;
+        animation: height-40 .4s forwards;
+      }
+  
+      .value50 {
+        height: 50%;
+        animation: height-50 .4s forwards;
+      }
+  
+      .value60 {
+        height: 60%;
+        animation: height-60 .4s forwards;
+      }
+  
+      .value70 {
+        height: 70%;
+        animation: height-70 .4s forwards;
+      }
+  
+      .value80 {
+        height: 80%;
+        animation: height-80 .4s forwards;
+      }
+  
+      .value90 {
+        height: 90%;
+        animation: height-90 .4s forwards;
+      }
+  
+      .value100 {
+        height: 100%;
+        animation: height-100 .4s forwards;
+      }
+  
+      .numberBar {
+        font-size: 20px;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
+
+@keyframes height-10 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 10%;
+  }
+}
+
+@keyframes height-20 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 20%;
+  }
+}
+
+@keyframes height-30 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 30%;
+  }
+}
+
+@keyframes height-40 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 40%;
+  }
+}
+
+@keyframes height-50 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 50%;
+  }
+}
+
+@keyframes height-60 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 60%;
+  }
+}
+
+@keyframes height-70 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 70%;
+  }
+}
+
+@keyframes height-80 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 80%;
+  }
+}
+
+@keyframes height-90 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 90%;
+  }
+}
+
+@keyframes height-100 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
