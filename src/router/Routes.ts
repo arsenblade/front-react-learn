@@ -3,6 +3,7 @@ import LoginPage from "../pages/Auth/login";
 import RegistrationPage from "../pages/Auth/registration";
 import MainPage from "../pages/MainPage";
 import ProfilePage from "../pages/Profile/Profile";
+import TopicsReactPage from "../pages/TopicsReact/TopicsReact";
 
 
 interface IRoute {
@@ -15,6 +16,7 @@ enum Routes {
   LOGIN_ROUTE = '/login',
   REGISTRATION_ROUTE = '/registration',
   PROFILE_ROUTE = '/profile',
+  TOPICS_REACT_ROUTE = '/topics/react',
 }
 
 export const publicRoutes: IRoute[] = [
@@ -40,6 +42,10 @@ export const authRoutes: IRoute[] = [
   {
     path: Routes.PROFILE_ROUTE,
     Component: ProfilePage
+  },
+  {
+    path: Routes.TOPICS_REACT_ROUTE,
+    Component: TopicsReactPage
   },
 ]
 
