@@ -5,6 +5,7 @@ import MainPage from "../pages/MainPage";
 import ProfilePage from "../pages/Profile/Profile";
 import TopicReactPage from "../pages/TopicsReact/TopicReact/TopicReact";
 import TopicsReactPage from "../pages/TopicsReact/TopicsReact";
+import TopicTestPage from "../pages/TopicsReact/TopicTest/TopicTest";
 
 
 interface IRoute {
@@ -19,6 +20,7 @@ enum Routes {
   PROFILE_ROUTE = '/profile',
   TOPICS_REACT_ROUTE = '/topics/react',
   TOPIC_REACT_ROUTE = '/topics/react/:id',
+  TOPIC_TEST_ROUTE = '/topics/test/:id',
 }
 
 export const publicRoutes: IRoute[] = [
@@ -52,6 +54,10 @@ export const authRoutes: IRoute[] = [
   {
     path: Routes.TOPIC_REACT_ROUTE,
     Component: TopicReactPage
+  },
+  {
+    path: Routes.TOPIC_TEST_ROUTE,
+    Component: TopicTestPage
   },
 ]
 

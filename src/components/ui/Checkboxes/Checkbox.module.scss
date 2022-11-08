@@ -16,7 +16,7 @@
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
-  background-color: #dadada;
+  background-color: $beige;
   cursor: pointer;
   transition: 0.04s ease-in;
 }
@@ -38,10 +38,11 @@
 }
 
 .checkboxText {
+  max-width: 95%;
   margin: 0;
   margin-left: 0.5em;
   vertical-align: middle;
-  color: #dadada;
+  color: $beige;
 }
 
 .checkboxInput:checked + .fakeCheckbox::before {
