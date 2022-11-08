@@ -3,6 +3,7 @@ import LoginPage from "../pages/Auth/login";
 import RegistrationPage from "../pages/Auth/registration";
 import MainPage from "../pages/MainPage";
 import ProfilePage from "../pages/Profile/Profile";
+import TopicReactPage from "../pages/TopicsReact/TopicReact/TopicReact";
 import TopicsReactPage from "../pages/TopicsReact/TopicsReact";
 
 
@@ -17,6 +18,7 @@ enum Routes {
   REGISTRATION_ROUTE = '/registration',
   PROFILE_ROUTE = '/profile',
   TOPICS_REACT_ROUTE = '/topics/react',
+  TOPIC_REACT_ROUTE = '/topics/react/:id',
 }
 
 export const publicRoutes: IRoute[] = [
@@ -46,6 +48,10 @@ export const authRoutes: IRoute[] = [
   {
     path: Routes.TOPICS_REACT_ROUTE,
     Component: TopicsReactPage
+  },
+  {
+    path: Routes.TOPIC_REACT_ROUTE,
+    Component: TopicReactPage
   },
 ]
 
