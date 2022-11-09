@@ -1,4 +1,6 @@
 import { ComponentType } from "react";
+import AdminCreateTopicPage from "../pages/Admin/AdminCreateTopic";
+import AdminStatisticsPage from "../pages/Admin/AdminStatistics";
 import LoginPage from "../pages/Auth/login";
 import RegistrationPage from "../pages/Auth/registration";
 import MainPage from "../pages/MainPage";
@@ -21,6 +23,8 @@ enum Routes {
   TOPICS_REACT_ROUTE = '/topics/react',
   TOPIC_REACT_ROUTE = '/topics/react/:id',
   TOPIC_TEST_ROUTE = '/topics/test/:id',
+  MANAGE_STATISTICS_ROUTE = '/manage/statistics',
+  MANAGE_CREATE_TOPIC_ROUTE = '/manage/create/topic'
 }
 
 export const publicRoutes: IRoute[] = [
@@ -58,6 +62,17 @@ export const authRoutes: IRoute[] = [
   {
     path: Routes.TOPIC_TEST_ROUTE,
     Component: TopicTestPage
+  },
+]
+
+export const adminRoutes: IRoute[] = [
+  {
+    path: Routes.MANAGE_STATISTICS_ROUTE,
+    Component: AdminStatisticsPage
+  },
+  {
+    path: Routes.MANAGE_CREATE_TOPIC_ROUTE,
+    Component: AdminCreateTopicPage
   },
 ]
 

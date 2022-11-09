@@ -35,6 +35,7 @@ export const authService = {
       password,
       name,
       avatar,
+      isAdmin: false,
     }
 
     const response = await axiosPublic.post<IUser>(getRegisterUrl(), defaultUser)

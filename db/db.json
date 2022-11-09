@@ -3,9 +3,10 @@
     {
       "id": "1",
       "email": "arsen@mail.ru",
-      "password": "1234",
+      "password": "123456",
       "name": "Yen",
       "avatar": "/avatar",
+      "isAdmin": true,
       "pointQuestions": [
         {
           "idQuestions": "2",

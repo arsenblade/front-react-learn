@@ -25,7 +25,8 @@ export const authSlice = createSlice({
         name: payload.name,
         id: payload.id,
         avatar: payload.avatar,
-        pointQuestions: payload.pointQuestions
+        pointQuestions: payload.pointQuestions,
+        isAdmin: payload.isAdmin
       }
       MyToast('Вы успешно зарегистрировались', true)
     })
@@ -43,7 +44,8 @@ export const authSlice = createSlice({
         name: payload.name,
         id: payload.id,
         avatar: payload.avatar,
-        pointQuestions: payload.pointQuestions
+        pointQuestions: payload.pointQuestions,
+        isAdmin: payload.isAdmin
       }
       MyToast('Вы успешно авторизировались', true)
     })

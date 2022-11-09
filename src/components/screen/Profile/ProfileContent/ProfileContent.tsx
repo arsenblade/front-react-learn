@@ -50,7 +50,7 @@ const ProfileContent:FC<IContent> = ({type, setValue, value}) => {
       {type === 'statistics' && 
         <div className={styles.userStatistics}>
           <h2 className={styles.title}>Баллы за тесты</h2>
-          <StatisticsTable data={testStats} />
+          <StatisticsTable data={testStats} color='pink'/>
           <div className={styles.containerStats}>
             <div className={styles.filledTests}>
               <h2>Количество пройденных тестов</h2>

@@ -4,6 +4,7 @@ export interface IUser {
   password: string;
   name: string;
   avatar: string;
+  isAdmin: boolean;
   pointQuestions: IPointQuestions[]
 }
 
