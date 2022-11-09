@@ -18,7 +18,7 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
 
   return (
     <nav className={cn(styles.navBar)}>
-      <div className={cn(styles.navBarList, {[`${styles.navBarListOpened}`]: navBarListVisible===true, [`${styles.navBarListClosed}`]: navBarListVisible===false})}>
+      <div className={cn(styles.navBarList, {[`${styles.navBarListOpened}`]: navBarListVisible === true, [`${styles.navBarListClosed}`]: navBarListVisible === false})}>
         <div className={styles.navBarItem}>
           <select className={styles.select}></select>
           <div className={styles.coursesList} onClick={()=>{setCourseVisible(!courseVisible)}}>
@@ -52,7 +52,7 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
         </div>
       </div>
       <button className={styles.navToggle} type='button' onClick={()=>{setNavBarListVisible(!navBarListVisible)}}>
-        <span className={styles.visuallyHidden}>Открыть меню</span>
+          <span className={styles.visuallyHidden}>Открыть меню</span>
       </button>
     </nav>
   )

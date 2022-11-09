@@ -7,7 +7,7 @@ const logoDesk = require('../../../assets/img/logoDesk.png')
 const Logo = () => {
   console.log(logoMob)
   return (
-    <Link className={styles.Logo} to='/'>
+    <Link className={styles.logo} to='/'>
       <picture>
         <source media="(min-width: 1440px)" srcSet={logoDesk}/>
         <img className={styles.logotype} src={logoMob} alt="React Learn"/>

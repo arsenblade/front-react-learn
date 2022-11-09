@@ -5,6 +5,30 @@
     height: 100px;
     width: 100%;
     position: relative;
+
+    @media(max-width: $tabletWidth) {
+        width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+    
+      @media(max-width: 800px) {
+        width: 640px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+    
+      @media(max-width: 600px) {
+        width: 460px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+    
+      @media(max-width: $mobileOnlyWidth) {
+        width: 380px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
 }
 
 .navBarList {
@@ -12,34 +36,39 @@
     align-items: center;
     width: 100%;
 
-    &Opened {
-        display: flex;
-        flex-direction: column;
-        z-index: 1;
-        width: 100vw;
-        position: absolute;
-        top: 120px;
-        left: calc(-263px - (100vw - 760px)/2);
-        align-items: center;
-        justify-content: center;
-
-        @media(max-width:800px) {
-            left: calc(-263px - (100vw - 600px)/2);
+    @media(max-width:$tabletWidth) {
+        &Opened {
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            width: 100vw;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            align-items: center;
+            justify-content: center;
+    
+            @media(max-width: 650px) {
+                width: 650px;
+            }
+    
+            @media(max-width: 600px) {
+                width: 100vw;
+            }
+    
+            @media(max-width: 460px) {
+                width: 460px;
+            }
+    
+            @media(max-width: $mobileOnlyWidth) {
+                width: 100vw;
+            }
+    
+            @media(max-width: 380px) {
+                width: 380px;
+            }
         }
-
-        @media(max-width:640px) {
-            left: calc(-263px - (100vw - 600px)/2);
-        }
-
-        @media(max-width:600px) {
-            left: calc(-263px - (100vw - 420px) / -2);
-        }
-
-        // @media(max-width:$mobileOnlyWidth) {
-        //     left: calc((100vw - 380px) / -2);
-        //     top: 120px
-        // }
-
     }
 }
 
@@ -59,7 +88,7 @@
     @media(max-width:$tabletWidth) {
         margin: 0;
         background-color: #242424;
-        width: 100vw;
+        width: 100%;
         align-items: center;
 
         &:nth-child(3) {
@@ -124,8 +153,8 @@
 
 .navToggle {
     position: absolute;
-    top: 20px;
-    right: -10px;
+    top: -80px;
+    right: 20px;
     z-index: 2;
     width: 80px;
     height: 64px;
