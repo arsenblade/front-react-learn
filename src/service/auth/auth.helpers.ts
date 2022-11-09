@@ -7,7 +7,8 @@ export const saveTokenStorage = (token: string, user: IUser) => {
     pointQuestions: user.pointQuestions,
     avatar: user.avatar,
     name: user.name,
-    id: user.id
+    id: user.id,
+    isAdmin: user.isAdmin
   }
   localStorage.setItem('user', JSON.stringify(userStorage))
 }
