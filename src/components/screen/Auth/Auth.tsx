@@ -1,4 +1,6 @@
-import React, { FC, FormEvent, useState } from 'react'
+
+import { FC} from 'react'
+
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
@@ -7,9 +9,9 @@ import Button from '../../ui/Button/Button'
 import styles from './Auth.module.scss'
 import cn from 'classnames'
 import { validEmail } from '../../../utils/regex'
+import Header from '../Header/Header'
 import FormInput from '../../ui/FormInput/FormInput'
 import { useActions } from '../../../hooks/useActions'
-import { ILogin, IRegistration } from '../../../service/auth/auth.service'
 
 interface IAuthProps {
   type: 'registration' | 'login'
@@ -53,6 +55,8 @@ const Auth:FC<IAuthProps> = ({type}) => {
   }
 
   return (
+    <>
+    <Header Auth/>
     <div className={styles.authContainer}>
         <span className={styles.reactLearnBackground}>React Learn</span>
         <form className={cn(styles.authForm, {
@@ -159,6 +163,8 @@ const Auth:FC<IAuthProps> = ({type}) => {
           }
         </form>
     </div>
+    </>
+    
   )
 }
 

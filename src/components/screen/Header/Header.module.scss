@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1440px;
+    color: white;
+  
+    @media(max-width: $tabletWidth) {
+      max-width: 800px;
+      padding: 20px;
+    }
+  
+    @media(max-width: 800px) {
+      width: 640px;
+    }
+  
+    @media(max-width: 600px) {
+      width: 460px;
+    }
+  
+    @media(max-width: $mobileOnlyWidth) {
+      width: 380px;
+      padding: 10px;
+    }
+}
