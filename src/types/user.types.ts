@@ -12,3 +12,8 @@ export interface IPointQuestions {
   idQuestions: string;
   points: string;
 }
+
+export interface IStatUser {
+  value: number;
+  isFilled: boolean;
+}

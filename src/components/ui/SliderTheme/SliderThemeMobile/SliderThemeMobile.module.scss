@@ -1,0 +1,45 @@
+@import '../../../../styles/variables.scss';
+
+.swiperCard {
+  width: 84%;
+  height: 500px;
+
+  >div > div {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 18px;
+    row-gap: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: $beige;
+    color: black;
+
+    .img {
+      border-radius: 10px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .description {
+      font-size: 22px;
+      margin: 0;
+      max-height: 150px;
+
+      @media(max-width: $mobileOnlyWidth) {
+        font-size: 20px;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      height: 60px;
+      font-size: 26px;
+      margin-top: auto;
+    }
+  }
+}
