@@ -1,0 +1,115 @@
+@import '../../../styles/variables.scss';
+
+.statTableContainer {
+  position: relative;
+  width: 100%;
+  height: max-content;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: 49px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    z-index: 2;
+  }
+
+  .statTable {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 300px;
+    column-gap: 20px;
+    overflow-x: auto;
+
+    .statBar {
+      height: 250px;
+      display: flex;
+      align-items: flex-end;
+
+      .bodyBarContainer {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: 250px;
+    
+        .bodyBar {
+          position: relative;
+          width: 50px;
+          cursor: pointer;
+          height: 100%;
+          animation: height-100 .4s forwards;
+    
+          .valueBar {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+    
+          .valueZero {
+            top: -14px;
+          }
+        }
+
+        .pinkBody {
+          background-color: $pink;
+        }
+
+        .violetBody {
+          background-color: $violet;
+        }
+    
+        .numberBar {
+          font-size: 20px;
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+
+    .statBarZero {
+
+      .bodyBarContainer {
+        height: 0;
+      }
+    }
+  }
+
+  .pinkScrollBar {
+    &::-webkit-scrollbar  {
+      background-color: rgba($color: $blackBackground, $alpha: 1);
+      height: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $pink;
+    }
+  }
+
+  .violetScrollBar {
+    &::-webkit-scrollbar  {
+      background-color: rgba($color: $blackBackground, $alpha: 1);
+      height: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $violet;
+    }
+  }
+}
+
+@keyframes height-100 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}

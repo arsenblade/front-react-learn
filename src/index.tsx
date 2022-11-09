@@ -3,6 +3,7 @@ import App from './App';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/global.scss';
 import './styles/fonts.scss';
+import "swiper/css/bundle";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

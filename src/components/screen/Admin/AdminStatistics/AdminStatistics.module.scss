@@ -1,0 +1,154 @@
+@import '../../../../styles/variables.scss';
+
+.adminStatistics {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  column-gap: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1440px;
+  padding-top: 20px;
+  color: white;
+  margin-bottom: 50px;
+
+  @media(max-width: $tabletWidth) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 800px) {
+    width: 640px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 600px) {
+    flex-direction: column;
+    width: 460px;
+  }
+
+  @media(max-width: $mobileOnlyWidth) {
+    width: 380px;
+    padding: 0 10px;
+  }
+
+  .containerGraphs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @media(max-width: 800px) {
+      flex-direction: column;
+    }
+
+    .graph {
+      max-width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media(max-width: 800px) {
+        max-width: 100%;
+      }
+
+      .title {
+        font-size: 28px;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+
+        @media(max-width: 1050px) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .containerStats {
+    display: flex;
+    column-gap: 40px;
+    margin-top: 20px;
+    justify-content: space-between;
+
+    @media(max-width: 800px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .filledTests {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 10px;
+      width: 400px;
+      background-color: $black;
+      border-radius: 10px;
+      padding: 20px;
+
+      @media(max-width: 800px) {
+        width: 100%;
+      }
+
+      >h2 {
+        font-size: 24px;
+        text-align: center;
+        margin: 0;
+
+        @media(max-width: 1050px) {
+          font-size: 18px;
+        }
+      }
+
+      >h3 {
+        color: $violet;
+        font-size: 54px;
+        margin: 0;
+        text-align: center;
+
+        @media(max-width: 1050px) {
+          font-size: 40px;
+        }
+      }
+    }
+
+    .averageScore {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 400px;
+      background-color: $black;
+      row-gap: 10px;
+      border-radius: 10px;
+      padding: 20px;
+
+      @media(max-width: 800px) {
+        width: 100%;
+      }
+
+      >h2 {
+        font-size: 24px;
+        text-align: center;
+        margin: 0;
+
+        @media(max-width: 1050px) {
+          font-size: 18px;
+        }
+      }
+
+      >h3 {
+        color: $violet;
+        font-size: 54px;
+        margin: 0;
+        text-align: center;
+
+        @media(max-width: 1050px) {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

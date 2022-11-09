@@ -1,0 +1,227 @@
+@import '../../../../styles/variables.scss';
+
+.topicReact {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 60px;
+  max-width: 1440px;
+  color: white;
+  margin-bottom: 50px;
+
+  @media(max-width: $tabletWidth) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 800px) {
+    width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 600px) {
+    width: 460px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: $mobileOnlyWidth) {
+    width: 380px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+
+  .playButton {
+    background: url('../../../../assets/img/play-button.png') no-repeat;
+    background-size: 80px 80px;
+    z-index: 2;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    border: none;
+  }
+
+  .title {
+    font-size: 50px;
+
+    width: 1244px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    @media(max-width: 1350px) {
+      width: 1155px;
+    }
+
+    @media(max-width: 1250px) {
+      width: 1066px;
+    }
+
+    @media(max-width: 1150px) {
+      width: 978px;
+      font-size: 44px;
+    }
+
+    @media(max-width: 1050px) {
+      width: 854px;
+    }
+
+    @media(max-width: $tabletWidth) {
+      width: 746px;
+    }
+
+    @media(max-width: 800px) {
+      width: 600px;
+      font-size: 34px;
+    }
+
+    @media(max-width: 600px) {
+      width: 420px;
+      font-size: 28px;
+    }
+
+    @media(max-width: $mobileOnlyWidth) {
+      width: 360px;
+    }
+  }
+
+  .containerPlayer {
+    margin-bottom: 20px;
+
+    > div {
+      width: 1244px !important;
+      height: 700px !important;
+
+      > div {
+        border-radius: 10px;
+      }
+
+      > video {
+        border-radius: 10px;
+      }
+
+      @media(max-width: 1350px) {
+        width: 1155px !important;
+        height: 650px !important;
+      }
+
+      @media(max-width: 1250px) {
+        width: 1066px !important;
+        height: 600px !important;
+      }
+
+      @media(max-width: 1150px) {
+        width: 978px !important;
+        height: 550px !important;
+      }
+
+      @media(max-width: 1050px) {
+        width: 854px !important;
+        height: 480px !important;
+      }
+
+      @media(max-width: $tabletWidth) {
+        width: 746px !important;
+        height: 420px !important;
+      }
+
+      @media(max-width: 800px) {
+        width: 600px !important;
+        height: 338px !important;
+      }
+
+      @media(max-width: 600px) {
+        width: 420px !important;
+        height: 236px !important;
+      }
+
+      @media(max-width: $mobileOnlyWidth) {
+        width: 360px !important;
+        height: 202px !important;
+      }
+    }
+
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1244px;
+    margin: 0 auto;
+
+    @media(max-width: 1350px) {
+      width: 1155px;
+    }
+
+    @media(max-width: 1250px) {
+      width: 1066px;
+    }
+
+    @media(max-width: 1150px) {
+      width: 978px;
+    }
+
+    @media(max-width: 1050px) {
+      width: 854px;
+    }
+
+    @media(max-width: $tabletWidth) {
+      width: 746px;
+    }
+
+    @media(max-width: 800px) {
+      width: 600px;
+    }
+
+    @media(max-width: 600px) {
+      flex-direction: column;
+      width: 420px;
+    }
+
+    @media(max-width: $mobileOnlyWidth) {
+      width: 360px;
+    }
+
+    .btn {
+      font-size: 30px;
+      height: 60px;
+
+      @media(max-width: 800px) {
+        font-size: 26px;
+        height: 50px;
+      }
+    }
+
+    .btnBack {
+      width: 200px;
+
+      @media(max-width: 800px) {
+        width: 180px;
+      }
+
+      @media(max-width: 600px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .btnNext {
+      width: 320px;
+
+      @media(max-width: 800px) {
+        width: 300px;
+      }
+
+      @media(max-width: 600px) {
+        width: 100%;
+      }
+    }
+  }
+}

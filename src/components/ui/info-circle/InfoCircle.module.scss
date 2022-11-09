@@ -1,0 +1,43 @@
+.circleContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.circlePink {	
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  transform: rotate(120deg);
+  transform-origin: center;
+  animation-name: rotation;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rotation {
+	0% {
+        transform:rotate(0deg);
+    }
+	30% {
+		transform: rotate(0deg)
+	}
+	36% {
+		transform: rotate(120deg)
+	}
+	63% {
+		transform: rotate(120deg)
+	}
+	69% {
+		transform: rotate(240deg)
+	}
+    94% {
+		transform: rotate(240deg);
+	}
+    100% {
+        transform:rotate(360deg);
+    }
+}

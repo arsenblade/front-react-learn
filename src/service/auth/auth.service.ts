@@ -4,11 +4,20 @@ import { IUser } from "../../types/user.types"
 import { removeTokenStorage, saveTokenStorage } from "./auth.helpers"
 const uuid = require('uuid')
 
+export interface IRegistration {
+  email: string, password: string, name: string, avatar: string
+}
+
+export interface ILogin {
+  email: string, password: string
+}
+
 
 
 
 export const authService = {
-  async register(email: string, password: string, name: string, avatar: string) {
+  async register(registerData: IRegistration) {
+    const {avatar, email, name, password} = registerData
     const {data} = await axiosPublic.get<IUser[]>(getUsersUrl(), {
       params: {
         email_like: email
@@ -26,6 +35,7 @@ export const authService = {
       password,
       name,
       avatar,
+      isAdmin: false,
     }
 
     const response = await axiosPublic.post<IUser>(getRegisterUrl(), defaultUser)
@@ -35,7 +45,8 @@ export const authService = {
     return response;
   },
 
-  async login(email: string, password: string) {
+  async login(loginData: ILogin) {
+    const {email, password} = loginData
     const response = await axiosPublic.post<IUser>(getLoginUrl(), {email, password})
     if(response.data) saveTokenStorage(uuid.v4(), response.data)
 

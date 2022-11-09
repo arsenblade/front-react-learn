@@ -1,13 +1,17 @@
+
 import { FC} from 'react'
+
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
-import {useForm} from 'react-hook-form'
+import {FieldValues, SubmitHandler, useForm} from 'react-hook-form'
 import Button from '../../ui/Button/Button'
 import styles from './Auth.module.scss'
 import cn from 'classnames'
 import { validEmail } from '../../../utils/regex'
 import Header from '../Header/Header'
+import FormInput from '../../ui/FormInput/FormInput'
+import { useActions } from '../../../hooks/useActions'
 
 interface IAuthProps {
   type: 'registration' | 'login'
@@ -15,6 +19,7 @@ interface IAuthProps {
 
 const Auth:FC<IAuthProps> = ({type}) => {
   const {user, isLoading} = useAuth()
+  const {registration, login} = useActions()
   const navigate = useNavigate()
 
   const {
@@ -30,23 +35,30 @@ const Auth:FC<IAuthProps> = ({type}) => {
     mode: "onBlur"
   })
 
-  const onSubmit = (data:{}) => {
-    alert(JSON.stringify(data));
-    reset();
+  const onSubmit:SubmitHandler<FieldValues> = (data) => {
+    if(type === 'login') {
+      login({email: data.email, password: data.password})
+      reset();
+    }
+    if(type === 'registration') {
+      registration({email: data.email, password: data.password, avatar: '', name: data.name})
+      reset();
+    }
+  }
+
+  if(user && isLoading === false) {
+    navigate('/')
   }
 
   if(isLoading === true || user) {
     return (null)
   }
 
-  if(user) {
-    navigate('/')
-  }
-
   return (
     <>
     <Header Auth/>
     <div className={styles.authContainer}>
+        <span className={styles.reactLearnBackground}>React Learn</span>
         <form className={cn(styles.authForm, {
         })} onSubmit={handleSubmit(onSubmit)}>
           <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
@@ -54,7 +66,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
           {type === 'registration' && 
             <div className={styles.field}>
               <label htmlFor='name'>Имя:</label>
-              <input className={styles.input} 
+              <FormInput className={styles.input} 
                 id='name'
                 type="text" 
                 placeholder='Введите имя' 
@@ -75,7 +87,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
 
           <div className={styles.field}>
             <label htmlFor='email'>Email:</label>
-            <input className={styles.input} 
+            <FormInput className={styles.input} 
               id='email'
               type="text" 
               placeholder='Введите email' 
@@ -93,7 +105,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
           
           <div className={styles.field}>
             <label htmlFor='password'>Пароль:</label>
-            <input className={styles.input} 
+            <FormInput className={styles.input} 
               type="password" 
               placeholder='Введите пароль' 
               {...register('password', 
@@ -112,7 +124,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
           {type === 'registration' && 
             <div className={styles.field}>
               <label htmlFor='password'>Повторите пароль:</label>
-              <input className={styles.input}
+              <FormInput className={styles.input}
                 type="password" 
                 placeholder='Введите пароль еще раз' 
                 {...register('repeatPassword', 

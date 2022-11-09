@@ -3,7 +3,7 @@
 .ourProgram {
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
@@ -40,100 +40,114 @@
     margin-bottom: 50px;
   }
 
-  .title {
-    font-size: 46px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    max-width: 1000px;
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
 
-    @media(max-width: 1300px) {
+    .title {
       font-size: 46px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 1000px;
+  
+      @media(max-width: 1300px) {
+        font-size: 46px;
+      }
+  
+      @media(max-width: 1250px) {
+        font-size: 38px;
+        max-width: 900px;
+      }
+  
+      @media(max-width: 1050px) {
+        font-size: 34px;
+        max-width: 800px;
+      }
+  
+      @media(max-width: $tabletWidth) {
+        font-size: 40px;
+        max-width: 100%;
+      }
+  
+      @media(max-width: 600px) {
+        font-size: 28px;
+      }
     }
-
-    @media(max-width: 1250px) {
-      font-size: 38px;
-      max-width: 900px;
-    }
-
-    @media(max-width: 1050px) {
-      font-size: 34px;
-      max-width: 800px;
-    }
-
-    @media(max-width: $tabletWidth) {
-      font-size: 40px;
-      max-width: 100%;
-    }
-
-    @media(max-width: 600px) {
-      font-size: 28px;
-    }
-  }
-
-  .description {
-    font-size: 30px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    max-width: 650px;
-
-    @media(max-width: 1050px) {
-      font-size: 26px;
-      max-width: 540px;
-    }
-
-    @media(max-width: $tabletWidth) {
+  
+    .description {
       font-size: 30px;
-      max-width: 665px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 650px;
+  
+      @media(max-width: 1050px) {
+        font-size: 26px;
+        max-width: 540px;
+      }
+  
+      @media(max-width: $tabletWidth) {
+        font-size: 30px;
+        max-width: 665px;
+      }
+  
+      @media(max-width: 800px) {
+      }
+  
+      @media(max-width: 600px) {
+        font-size: 22px;
+        max-width: 485px;
+      }
+  
+      @media(max-width: $mobileOnlyWidth) {
+        font-size: 18px;
+      }
     }
-
-    @media(max-width: 800px) {
-    }
-
-    @media(max-width: 600px) {
-      font-size: 22px;
-      max-width: 485px;
-    }
-
-    @media(max-width: $mobileOnlyWidth) {
-      font-size: 18px;
+  
+    .btn {
+      width: 360px;
+      height: 80px;
+      font-size: 36px;
+  
+      @media(max-width: 1300px) {
+        width: 330px;
+        font-size: 32px;
+        height: 70px;
+      }
+  
+      @media(max-width: 1250px) {
+        width: 300px;
+        font-size: 28px;
+        height: 60px;
+      }
+  
+      @media(max-width: 1050px) {
+        width: 285px;
+        font-size: 26px;
+        height: 55px;
+      }
+  
+      @media(max-width: $tabletWidth) {
+        width: 330px;
+        font-size: 32px;
+        height: 70px;
+      }
+  
+      @media(max-width: 800px) {
+        width: 100%;
+      }
+  
+      @media(max-width: $mobileOnlyWidth) {
+        font-size: 26px;
+      }
     }
   }
 
-  .btn {
-    width: 360px;
-    height: 80px;
-    font-size: 36px;
+  .spinnerProgram {
+    width: 350px;
+    height: 350px;
 
-    @media(max-width: 1300px) {
-      width: 330px;
-      font-size: 32px;
-      height: 70px;
-    }
-
-    @media(max-width: 1250px) {
-      width: 300px;
-      font-size: 28px;
-      height: 60px;
-    }
-
-    @media(max-width: 1050px) {
-      width: 285px;
-      font-size: 26px;
-      height: 55px;
-    }
-
-    @media(max-width: $tabletWidth) {
-      width: 330px;
-      font-size: 32px;
-      height: 70px;
-    }
-
-    @media(max-width: 800px) {
-      width: 100%;
-    }
-
-    @media(max-width: $mobileOnlyWidth) {
-      font-size: 26px;
-    }
+    @media(max-width: 950px) {
+      display: none;
+    }    
   }
 }
