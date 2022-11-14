@@ -94,7 +94,9 @@
         transition: width .3s ease-in-out;
 
         @media(max-width: 800px) {
-          display: none;
+          >span {
+            display: none;
+          }
         }
       }
       
@@ -111,13 +113,31 @@
       }
   
       @media(max-width: 800px) {
+        width: 64px;
+        height: 64px;
+        background-color: transparent;
+
         >span {
           display: none;
         }
       }
     }
 
-    .currentActive {
+    .statistics {
+
+      @media(max-width: 800px) {
+        background: url('../../../../assets/img/statistics-icon-white.png');
+      }
+    }
+
+    .createTopic {
+
+      @media(max-width: 800px) {
+        background: url('../../../../assets/img/settings-icon-white.png');
+      }
+    }
+
+    .currentActiveStatistics {
 
       &::before {
         content: '';
@@ -131,6 +151,33 @@
         @media(max-width: 800px) {
           display: none;
         }
+      }
+
+      @media(max-width: 800px) {
+        margin-top: -10px;
+        background: url('../../../../assets/img/statistics-icon-violet.png');
+      }
+    }
+
+    .currentActiveCreateTopic {
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: $pink;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+
+        @media(max-width: 800px) {
+          display: none;
+        }
+      }
+
+      @media(max-width: 800px) {
+        background: url('../../../../assets/img/settings-icon-violet.png');
+        margin-top: -10px;
       }
     }
   }

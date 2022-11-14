@@ -1,0 +1,380 @@
+@import '../../../../styles/variables.scss';
+
+.adminCreateTopic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 60px;
+  max-width: 1440px;
+  color: white;
+  margin-bottom: 50px;
+
+  @media(max-width: $tabletWidth) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 800px) {
+    width: 640px;
+  }
+
+  @media(max-width: 600px) {
+    width: 460px;
+  }
+
+  @media(max-width: $mobileOnlyWidth) {
+    width: 380px;
+    padding: 0 10px;
+  }
+
+  .containerContentTopic {
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 800px) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+
+    .videoContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 500px;
+      height: 300px;
+      background-color: $black;
+      border: 6px dashed white;
+      border-radius: 10px;
+      cursor: pointer;
+
+      @media(max-width: 1350px) {
+        width: 420px;
+        height: 260px;
+      }
+
+      @media(max-width: 1150px) {
+        width: 340px;
+        height: 220px;
+      }
+
+      @media(max-width: 800px) {
+        width: 100%;
+        height: 300px;
+      }
+
+      @media(max-width: 600px) {
+        height: 250px;
+      }
+
+      @media(max-width: $mobileOnlyWidth) {
+        height: 210px;
+      }
+    
+
+      .title {
+        font-size: 32px;
+
+        @media(max-width: 1350px) {
+          font-size: 28px;
+        }
+
+        @media(max-width: 1150px) {
+          font-size: 26px;
+        }
+
+        @media(max-width: 800px) {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .containerTextContent {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+
+      .containerTitleInput {
+        display: flex;
+        column-gap: 20px;
+        align-items: flex-start;
+
+        
+        @media(max-width: 1000px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+
+        >span {
+          font-size: 28px;
+          min-width: 200px;
+
+          @media(max-width: 1350px) {
+            font-size: 24px;
+          }
+
+          @media(max-width: 1150px) {
+            font-size: 22px;
+          }
+
+          @media(max-width: 800px) {
+            font-size: 24px;
+          }
+        }
+
+        .titleInput {
+          width: 500px;
+          font-size: 24px;
+
+          @media(max-width: 1350px) {
+            width: 400px;
+          }
+
+          @media(max-width: 1150px) {
+            width: 300px;
+          }
+
+          @media(max-width: 800px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .containerDescriptionInput {
+        display: flex;
+        column-gap: 20px;
+        align-items: flex-start;
+
+        @media(max-width: 1000px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+
+        >span {
+          font-size: 28px;
+          min-width: 200px;
+
+          @media(max-width: 1350px) {
+            font-size: 24px;
+          }
+
+          @media(max-width: 1150px) {
+            font-size: 22px;
+          }
+
+          @media(max-width: 800px) {
+            font-size: 24px;
+          }
+        }
+
+        .descriptionInput {
+          width: 500px;
+          height: 210px;
+          font-size: 24px;
+
+          @media(max-width: 1350px) {
+            width: 400px;
+            height: 180px;
+          }
+
+          @media(max-width: 1150px) {
+            width: 300px;
+            height: 130px;
+          }
+
+          @media(max-width: 800px) {
+            width: 100%;
+            height: 180px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .containerTest {
+
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 40px;
+
+      .title {
+        font-size: 30px;
+
+        @media(max-width: 1350px) {
+          font-size: 26px;
+        }
+
+        @media(max-width: 1150px) {
+          font-size: 24px;
+        }
+
+        @media(max-width: $tabletWidth) {
+          font-size: 26px;
+        }
+      }
+
+      .numberTest {
+        font-size: 26px;
+        width: 80px;
+
+        @media(max-width: 1350px) {
+          font-size: 24px;
+        }
+
+        @media(max-width: 1150px) {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .createTest {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+
+      .containerQuestionInput {
+        display: flex;
+        column-gap: 40px;
+        align-items: flex-start;
+        margin: 0 auto;
+
+        @media(max-width: $tabletWidth) {
+          flex-direction: column;
+          row-gap: 20px;
+          margin: 0;
+        }
+
+        >span {
+          font-size: 28px;
+
+          @media(max-width: 1350px) {
+            font-size: 24px;
+          }
+
+          @media(max-width: 1150px) {
+            font-size: 22px;
+          }
+
+          @media(max-width: $tabletWidth) {
+            font-size: 24px;
+          }
+        }
+
+        .questionsInput {
+          width: 600px;
+          font-size: 24px;
+
+          @media(max-width: $tabletWidth) {
+            width: 100%;
+          }
+        }
+      }
+
+      .answers {
+
+
+        .title {
+          font-size: 30px;
+          text-align: center;
+
+          @media(max-width: 1350px) {
+            font-size: 28px;
+          }
+
+          @media(max-width: 1150px) {
+            font-size: 26px;
+          }
+
+          @media(max-width: 800px) {
+            font-size: 28px;
+          }
+        }
+
+        .containerAnswersInput {
+          display: grid;
+          justify-content: center;
+          grid-template-columns: 600px 600px;
+          column-gap: 20px;
+          row-gap: 30px;
+
+          @media(max-width: 1350px) {
+            grid-template-columns: 500px 500px;
+          }
+
+          @media(max-width: 1150px) {
+            grid-template-columns: 400px 400px;
+          }
+
+          @media(max-width: $tabletWidth) {
+            grid-template-columns: 360px 360px;
+          }
+
+          @media(max-width: 800px) {
+            grid-template-columns: 100%;
+          }
+
+          .containerAnswerInput {
+            display: flex;
+            column-gap: 20px;
+  
+            >span {
+              width: 20px;
+              font-size: 26px;
+            }
+  
+            .answerInput {
+              font-size: 24px;
+              width: 600px;
+            }
+          }
+        }
+      }
+
+      .containerBtn {
+        display: flex;
+        justify-content: space-between;
+
+        @media(max-width: 800px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+
+        .btn {
+          width: 300px;
+          height: 60px;
+          font-size: 26px;
+
+          @media(max-width: 1150px) {
+            width: 270px;
+            font-size: 24px;
+            height: 50px;
+          }
+      
+          @media(max-width: $tabletWidth) {
+            width: 240px;
+            font-size: 24px;
+            height: 50px;
+          }
+      
+          @media(max-width: 800px) {
+            width: 100%;
+          }
+      
+          @media(max-width: $mobileOnlyWidth) {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
