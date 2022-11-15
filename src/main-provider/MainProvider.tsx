@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
+import Header from '../components/screen/Header/Header';
 import MyToastContainer from '../components/ui/MyToast/MyToastContainer';
 import AppRouter from '../router/AppRouter';
 import { store } from '../store/store';
@@ -24,6 +25,7 @@ const MainProvider:FC<MainProviderProps> = ({children}) => {
     <BrowserRouter>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
+          <Header Auth={true}/>
           {children}
           <MyToastContainer />
           <AppRouter />

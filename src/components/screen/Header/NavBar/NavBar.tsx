@@ -2,17 +2,24 @@ import { FC, useState} from 'react'
 import { Link } from 'react-router-dom'
 import cn from 'classnames';
 import styles from './NavBar.module.scss'
-import '../../../styles/variables.scss';
+import Select from '../../../ui/Select/Select';
+import { IOption } from '../../../ui/Select/select.interface';
+import PresentCourse from '../../Main/PresentCourse/PresentCourse';
 
 interface INavBarProps {
   Auth: boolean
 }
 
+const testSelect: IOption[] = [{label: 'Реакт - курс для новичков', value: 'react-beginners-course'}, {label: 'Реакт - курс для провдинутых', value: 'react-advanced-course'}, {label: '5 небольших проектов для резюме', value: 'react-five-project-course'}]
+
+const testSelect2: IOption[] = [ {label: 'Реакт - курс для провдинутых', value: 'react-advanced-course'}, {label: '5 небольших проектов для резюме', value: 'react-five-project-course'}]
 
 const NavBar:FC<INavBarProps> = ({Auth}) => {
  const [navBarListVisible, setNavBarListVisible] = useState<true|false>(false)
  const [courseVisible, setCourseVisible] = useState<true|false>(false)
  const [myCourseVisible, setMyCourseVisible] = useState<true|false>(false)
+ const [value, setValue] = useState<IOption | undefined>()
+ const [value2, setValue2] = useState<IOption | undefined>()
 
 
 
@@ -46,6 +53,10 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
               </div>
             </>            
           }
+        </div>
+        <div className={styles.selectContainer}>
+          <Select onChange={setValue} value={value} options={testSelect} placeholder='Курсы'/>
+          <Select onChange={setValue2} value={value2} options={testSelect2} placeholder='Мое обучение'/>
         </div>
         <div className={styles.navBarItem}>
           <Link to="/login" className={styles.authOut}>{Auth===true ? 'Выйти' : 'Авторизация'}</Link>
