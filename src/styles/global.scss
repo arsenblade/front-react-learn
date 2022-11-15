@@ -46,3 +46,93 @@ a {
 .swiper-button-next {
   color: $pink !important;
 }
+
+.dropdownListAnimation1-enter-active {
+  animation: show-dropdown-list1 .5s forwards;
+}
+
+.dropdownListAnimation1-exit-active {
+  animation: exit-dropdown-list1 .5s forwards;
+}
+
+@keyframes show-dropdown-list1 {
+  0% {
+    height: 0; 
+  }
+  100% {
+    height: 58px;
+  }
+}
+
+@keyframes exit-dropdown-list1 {
+  0% {
+    height: 58px; 
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.dropdownListAnimation2-enter-active {
+  animation: show-dropdown-list2 .5s forwards;
+}
+
+.dropdownListAnimation2-exit-active {
+  animation: exit-dropdown-list2 .5s forwards;
+}
+
+@keyframes show-dropdown-list2 {
+  0% {
+    height: 0; 
+  }
+  100% {
+    height: 116px;
+  }
+}
+
+@keyframes exit-dropdown-list2 {
+  0% {
+    height: 116px; 
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.dropdownListAnimation3-enter-active {
+  animation: show-dropdown-list3 .5s forwards;
+}
+
+.dropdownListAnimation3-exit-active {
+  animation: exit-dropdown-list3 .5s forwards;
+}
+
+@keyframes show-dropdown-list3 {
+  0% {
+    height: 0; 
+  }
+  100% {
+    height: 174px;
+  }
+}
+
+@keyframes exit-dropdown-list3 {
+  0% {
+    height: 174px; 
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}

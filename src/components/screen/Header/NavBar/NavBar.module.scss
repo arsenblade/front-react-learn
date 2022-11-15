@@ -1,10 +1,11 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
 .navBar {
     display: flex;
     height: 100px;
     width: 100%;
     position: relative;
+    z-index: 100;
 
     @media(max-width: $tabletWidth) {
         width: 800px;
@@ -81,8 +82,13 @@
 .navBarItem {
     margin-left: 15px;
 
+
     &:nth-child(3) {
         margin-left: auto;
+    }
+
+    @media(min-width:$tabletWidth) {
+        display: none;
     }
 
     @media(max-width:$tabletWidth) {
@@ -104,6 +110,12 @@
     @media(max-width:$tabletWidth) {
         display: none;
     }
+}
+
+.selectContainer {
+    display: flex;
+    column-gap: 40px;
+    margin-left: 50px;
 }
 
 .coursesList {

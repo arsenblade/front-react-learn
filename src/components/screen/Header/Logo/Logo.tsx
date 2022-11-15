@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import styles from "./Logo.module.scss"
-const logoMob = require('../../../assets/img/logoMob.png')
-const logoDesk = require('../../../assets/img/logoDesk.png')
+const logoMob = require('../../../../assets/img/logoMob.png')
+const logoDesk = require('../../../..//assets/img/logoDesk.png')
 
 
 const Logo = () => {
