@@ -4,7 +4,8 @@ import cn from 'classnames';
 import styles from './NavBar.module.scss'
 import Select from '../../../ui/Select/Select';
 import { IOption } from '../../../ui/Select/select.interface';
-import PresentCourse from '../../Main/PresentCourse/PresentCourse';
+import UserMenu from '../../../ui/UserMenu/UserMenu';
+import { useAuth } from '../../../../hooks/useAuth';
 
 interface INavBarProps {
   Auth: boolean
@@ -14,12 +15,18 @@ const testSelect: IOption[] = [{label: 'Реакт - курс для нович�
 
 const testSelect2: IOption[] = [ {label: 'Реакт - курс для провдинутых', value: 'react-advanced-course'}, {label: '5 небольших проектов для резюме', value: 'react-five-project-course'}]
 
+const userMenuItems: IOption[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Выход', value: 'exit'}]
+
+const adminMenuItems: IOption[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Админ панель', value: 'admin-panel'}, {label: 'Выход', value: 'exit'}]
+
 const NavBar:FC<INavBarProps> = ({Auth}) => {
  const [navBarListVisible, setNavBarListVisible] = useState<true|false>(false)
  const [courseVisible, setCourseVisible] = useState<true|false>(false)
  const [myCourseVisible, setMyCourseVisible] = useState<true|false>(false)
- const [value, setValue] = useState<IOption | undefined>()
- const [value2, setValue2] = useState<IOption | undefined>()
+ const [valueCourse, setValueCourse] = useState<IOption | undefined>()
+ const [valueMyTraining, setValueMyTraining] = useState<IOption | undefined>()
+ const [valueMySettings, setValueMySettings] = useState<IOption | undefined>()
+ const {user, isLoading} = useAuth()
 
 
 
@@ -55,9 +62,16 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
           }
         </div>
         <div className={styles.selectContainer}>
-          <Select onChange={setValue} value={value} options={testSelect} placeholder='Курсы'/>
-          <Select onChange={setValue2} value={value2} options={testSelect2} placeholder='Мое обучение'/>
+          <Select onChange={setValueCourse} value={valueCourse} options={testSelect} placeholder='Курсы'/>
+          <Select onChange={setValueMyTraining} value={valueMyTraining} options={testSelect2} placeholder='Мое обучение'/>
         </div>
+        {user && <div className={styles.userMenu}>
+          <UserMenu isAdmin={user.isAdmin} options={user.isAdmin === true ? adminMenuItems : userMenuItems} onChange={setValueMySettings} value={valueMySettings}/>
+        </div>}
+        {isLoading === false && !user && 
+        <Link className={styles.authorizationLink} to='/login'>
+          Авторизоваться
+        </Link>}
         <div className={styles.navBarItem}>
           <Link to="/login" className={styles.authOut}>{Auth===true ? 'Выйти' : 'Авторизация'}</Link>
         </div>

@@ -56,9 +56,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
 
   return (
     <>
-    <Header Auth/>
     <div className={styles.authContainer}>
-        <span className={styles.reactLearnBackground}>React Learn</span>
         <form className={cn(styles.authForm, {
         })} onSubmit={handleSubmit(onSubmit)}>
           <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>

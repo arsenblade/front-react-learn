@@ -1,0 +1,167 @@
+@import '../../../styles/variables.scss';
+
+$heightSelect: 40px;
+
+.userMenuContainer {
+  display: block;
+
+  .closeBackground {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .userMenu {
+    position: relative;
+    width: max-content;
+    z-index: 2;
+
+    .inputUserMenu {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      background-color: $blackBackground;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      padding: 14px;
+    
+
+      .iconUser {
+        width: 50px;
+        height: 50px;
+        background: url('../../../assets/img/person-icon.png');
+      }
+    }
+
+    .openInput {
+      background-color: $black;
+    }
+
+    .closeInput {
+      animation: close-input 1s forwards;
+    }
+  
+    .dropdown {
+      display: block;
+      position: absolute;
+      background-color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      right: 0;
+      width: 264px;
+      top: 78px;
+  
+      .dropdownList {
+        overflow-y: auto;
+        max-height: 174px;
+  
+        .dropdownItem {
+          font-size: 1.6em;
+          line-height: 22px;
+          padding: 18px;
+          cursor: pointer;
+        }
+
+        .dropdownItem:nth-child(1) {
+          background: url('../../../assets/img/gear-wheel-small-white.png') no-repeat 220px center;
+
+          &:hover {
+            animation: hover-item-1 0.4s forwards;
+          }
+        }
+
+        .dropdownItem:nth-child(2) {
+          background: url('../../../assets/img/admin-small-white.png') no-repeat 190px center;
+
+          &:hover {
+            animation: hover-item-2 0.4s forwards;
+          }
+        }
+
+        .dropdownItem:last-child {
+          background: url('../../../assets/img/exit-small-white.png') no-repeat 100px center;
+
+          &:hover {
+            animation: hover-item-3 0.4s forwards;
+          }
+        }
+
+        .noActive {
+          &:hover {
+            animation: hover-item 0.4s forwards;
+          }
+        }
+  
+        .active {
+          color: $pink;
+        }
+  
+        &::-webkit-scrollbar  {
+          background-color: $black;
+          width: 6px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background-color: $black;
+          width: 8px;
+        }
+      }
+    }
+  }
+}
+
+.openSelectContainer {
+  z-index: 5;
+}
+
+@keyframes hover-item {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    color: $violet;
+  }
+}
+
+@keyframes hover-item-1 {
+  0% {
+    background: url('../../../assets/img/gear-wheel-small-white.png') no-repeat 220px center;
+  }
+  100% {
+    background: url('../../../assets/img/gear-wheel-small-purple.png') no-repeat 220px center;
+    color: $violet;
+  }
+}
+
+@keyframes hover-item-2 {
+  0% {
+    background: url('../../../assets/img/admin-small-white.png') no-repeat 190px center;
+  }
+  100% {
+    background: url('../../../assets/img/admin-small-purple.png') no-repeat 190px center;
+    color: $violet;
+  }
+}
+
+@keyframes hover-item-3 {
+  0% {
+    background: url('../../../assets/img/exit-small-white.png') no-repeat 100px center;
+  }
+  100% {
+    background: url('../../../assets/img/exit-small-purple.png') no-repeat 100px center;
+    color: $violet;
+  }
+}
+
+@keyframes close-input {
+  0% {
+    background-color: $black;
+  }
+  100% {
+    color: $blackBackground;
+  }
+}

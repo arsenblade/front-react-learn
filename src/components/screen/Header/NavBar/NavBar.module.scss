@@ -118,6 +118,21 @@
     margin-left: 50px;
 }
 
+.userMenu {
+    margin-left: auto;
+}
+
+.authorizationLink {
+    display: block;
+    padding: 10px 12px;
+    font-weight: 900;
+    font-size: 1.6em;
+    margin-left: auto;
+    &:hover {
+        animation: hover-link 0.4s forwards;
+    }
+}
+
 .coursesList {
     display: none;
     @media(max-width:$tabletWidth) {
@@ -225,4 +240,13 @@
     border: 0;
     clip: rect(0 0 0 0);
     overflow: hidden;
-  }
+}
+
+@keyframes hover-link {
+    0% {
+        color: white;
+    }
+    100% {
+        color: $violet;
+    }
+}
