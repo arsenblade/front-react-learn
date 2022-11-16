@@ -48,11 +48,27 @@ a {
 }
 
 .dropdownListAnimation1-enter-active {
-  animation: show-dropdown-list1 .5s forwards;
+  animation: show-dropdown-list1 .3s forwards;
 }
 
 .dropdownListAnimation1-exit-active {
-  animation: exit-dropdown-list1 .5s forwards;
+  animation: exit-dropdown-list1 .3s forwards;
+}
+
+.dropdownListAnimationAdmin-enter-active {
+  animation: show-dropdown-list3 .3s forwards;
+}
+
+.dropdownListAnimationAdmin-exit-active {
+  animation: exit-dropdown-list3 .3s forwards;
+}
+
+.dropdownListAnimationUser-enter-active {
+  animation: show-dropdown-list2 .3s forwards;
+}
+
+.dropdownListAnimationUser-exit-active {
+  animation: exit-dropdown-list2 .3s forwards;
 }
 
 @keyframes show-dropdown-list1 {
@@ -78,11 +94,11 @@ a {
 }
 
 .dropdownListAnimation2-enter-active {
-  animation: show-dropdown-list2 .5s forwards;
+  animation: show-dropdown-list2 .3s forwards;
 }
 
 .dropdownListAnimation2-exit-active {
-  animation: exit-dropdown-list2 .5s forwards;
+  animation: exit-dropdown-list2 .3s forwards;
 }
 
 @keyframes show-dropdown-list2 {
@@ -108,11 +124,11 @@ a {
 }
 
 .dropdownListAnimation3-enter-active {
-  animation: show-dropdown-list3 .5s forwards;
+  animation: show-dropdown-list3 .3s forwards;
 }
 
 .dropdownListAnimation3-exit-active {
-  animation: exit-dropdown-list3 .5s forwards;
+  animation: exit-dropdown-list3 .3s forwards;
 }
 
 @keyframes show-dropdown-list3 {

@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom'
 import { getClassAnimation } from '../../../utils/getClassAnimation'
 
 
-const Select:FC<ISelect> = ({options, value, onChange, placeholder}) => {
+const Select:FC<ISelect> = ({options, placeholder}) => {
   const [isVisibleDropdown, setIsVisibleDropdown] = useState<undefined | 'visible' | 'invisible'>()
   const classAnimation = getClassAnimation(options.length)
 
+
   const handleClickOption = (option: IOption) => {
-    onChange(option)
     setIsVisibleDropdown('invisible')
   }
 
@@ -53,7 +53,7 @@ const Select:FC<ISelect> = ({options, value, onChange, placeholder}) => {
                 <CSSTransition
                 in={isVisibleDropdown === 'visible' ? true : false}
                 classNames={styles.dropdownListAnimation}
-                timeout={300}
+                timeout={200}
                 mountOnEnter
                 unmountOnExit
                 >
@@ -65,7 +65,7 @@ const Select:FC<ISelect> = ({options, value, onChange, placeholder}) => {
                 <CSSTransition
                 in={isVisibleDropdown === 'visible' ? true : false}
                 classNames={classAnimation}
-                timeout={300}
+                timeout={200}
                 mountOnEnter
                 unmountOnExit
                 >
@@ -73,10 +73,7 @@ const Select:FC<ISelect> = ({options, value, onChange, placeholder}) => {
                   {options.map(option => 
                     <div 
                       key={option.value} 
-                      className={cn(styles.dropdownItem , {
-                        [styles.noActive]: value?.value !== option.value,
-                        [styles.active]: value?.value === option.value
-                      })}
+                      className={cn(styles.dropdownItem)}
                       onClick={() => handleClickOption(option)}
                     >
                       {option.label}

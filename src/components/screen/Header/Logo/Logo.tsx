@@ -5,7 +5,6 @@ const logoDesk = require('../../../..//assets/img/logoDesk.png')
 
 
 const Logo = () => {
-  console.log(logoMob)
   return (
     <Link className={styles.logo} to='/'>
       <picture>
