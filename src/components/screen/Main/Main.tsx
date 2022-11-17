@@ -8,8 +8,6 @@ import PaymentCourse from './PaymentCourse/PaymentCourse'
 import PersonalProject from './PersonalProject/PersonalProject'
 import PresentCourse from './PresentCourse/PresentCourse'
 
-
-
 const Main = () => {
   return (
     <div>
