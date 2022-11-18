@@ -2,6 +2,8 @@ import {FC} from 'react'
 import styles from './Footer.module.scss'
 import cn from 'classnames'
 import { Link } from 'react-router-dom'
+const vkWhite = require('../../../assets/img/vk-white.png')
+const vkBlack = require('../../../assets/img/vk-black.png')
 
 interface IFooter {
   color: 'black' | 'white'
@@ -19,9 +21,19 @@ const Footer:FC<IFooter> = ({color}) => {
       })}>
         <h2>Сайт сделан:</h2>
         <div className={styles.containerLink}>
-          <Link className={styles.iconLink} to='vk.com'></Link>
-          <Link className={styles.iconLink} to='vk.com'></Link>
-          <Link className={styles.iconLink} to='vk.com'></Link>
+          <Link className={styles.iconLink} to='vk.com'>
+            {color === 'black' && <img src={vkWhite} alt="vk"/>}
+            {color === 'white' && <img src={vkBlack} alt="vk"/>}
+          </Link>
+          <Link className={styles.iconLink} to='vk.com'>
+            {color === 'black' && <img src={vkWhite} alt="vk"/>}
+            {color === 'white' && <img src={vkBlack} alt="vk"/>}
+
+          </Link>
+          <Link className={styles.iconLink} to='vk.com'>
+            {color === 'black' && <img src={vkWhite} alt="vk"/>}
+            {color === 'white' && <img src={vkBlack} alt="vk"/>}
+          </Link>
         </div>
       </div>
     </div>
