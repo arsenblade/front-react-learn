@@ -23,14 +23,12 @@ const queryClient = new QueryClient({
 const MainProvider:FC<MainProviderProps> = ({children}) => {
   return (
     <BrowserRouter>
-      <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <Header Auth={true}/>
           {children}
           <MyToastContainer />
           <AppRouter />
         </QueryClientProvider>
-      </Provider>
     </BrowserRouter>
   )
 }

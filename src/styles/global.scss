@@ -41,10 +41,18 @@ a {
 
 .swiper-button-prev {
   color: $pink !important;
+
+  &::after {
+    font-size: 55px !important;
+  }
 }
 
 .swiper-button-next {
   color: $pink !important;
+
+  &::after {
+    font-size: 55px !important;
+  }
 }
 
 .dropdownListAnimation1-enter-active {
@@ -150,5 +158,37 @@ a {
   100% {
     opacity: 0;
     height: 0;
+  }
+}
+
+.test-animation-enter-active {
+  animation: show-dropdown-list4 .5s forwards;
+}
+
+.test-animation-exit-active {
+  animation: exit-dropdown-list4 .5s forwards;
+}
+
+@keyframes show-dropdown-list4 {
+  0% {
+    height: 0;
+    padding-bottom: 0;
+  }
+  100% {
+    height: 100vh;
+    padding-bottom: 122px;
+  }
+}
+
+@keyframes exit-dropdown-list4 {
+  0% {
+    height: 100vh;
+    opacity: 1; 
+  }
+  50%{
+  }
+  100% {
+    height: 0px;
+    padding-bottom: 0;
   }
 }

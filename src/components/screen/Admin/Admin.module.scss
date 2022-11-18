@@ -1,6 +1,9 @@
 @import '../../../styles/variables.scss';
 
 .admin {
+  @media(max-width: $tabletWidth) {
+    margin-top: 120px;
+  }
 
   .adminContent {
     width: 100%;
@@ -12,7 +15,6 @@
     }
 
     @media(max-width: 600px) {
-      border-top: none;
       width: 100%;
     }
 

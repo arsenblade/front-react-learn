@@ -52,6 +52,10 @@ $heightSelect: 40px;
         padding-right: 30px;
         font-size: 1.6em;
         line-height: 26px;
+
+        @media(max-width: 1100px) {
+          font-size: 1.4em;
+        }
       }
     
       &:hover {
@@ -83,6 +87,10 @@ $heightSelect: 40px;
       width: 500px;
       left: 0;
       top: 54px;
+
+      @media(max-width: 1100px) {
+        width: 400px;
+      }
   
       .dropdownList {
         overflow-y: auto;
@@ -96,6 +104,11 @@ $heightSelect: 40px;
 
           &:hover {
             animation: hover-item 0.4s forwards;
+          }
+
+          @media(max-width: 1100px) {
+            font-size: 1.4em;
+            padding: 16px;
           }
         }
   

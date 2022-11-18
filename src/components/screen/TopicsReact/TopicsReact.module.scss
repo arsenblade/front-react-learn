@@ -5,7 +5,6 @@
   margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 60px;
   max-width: 1440px;
   color: white;
   margin-bottom: 50px;
@@ -15,32 +14,26 @@
     margin: 0 auto;
     padding: 0 20px;
     margin-bottom: 50px;
+    margin-top: 120px;
   }
 
   @media(max-width: 800px) {
     width: 640px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin-bottom: 50px;
   }
 
   @media(max-width: 600px) {
     width: 460px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin-bottom: 50px;
   }
 
   @media(max-width: $mobileOnlyWidth) {
     width: 380px;
-    margin: 0 auto;
     padding: 0 10px;
-    margin-bottom: 50px;
   }
 
   .title {
     font-size: 40px;
     text-align: center;
+    margin-top: 0;
 
     @media(max-width: 1050px) {
       font-size: 34px;
