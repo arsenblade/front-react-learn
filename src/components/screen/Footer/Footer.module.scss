@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  padding-bottom: 40px;
+  padding: 40px;
 
   @media(max-width: 650px) {
     width: 650px;
@@ -18,6 +18,7 @@
 
   @media(max-width: $mobileOnlyWidth) {
     width: 100%;
+    padding: 20px;
   }
 
   @media(max-width: 380px) {
@@ -27,8 +28,64 @@
 
 .containerWhite {
   background-color: $beige;
+  color: black;
 }
 
 .containerBlack {
   background-color: $black;
+  color: white;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media(min-width: $mobileOnlyWidth) {
+    width: 380px;
+  }
+
+  @media(min-width: $tabletWidth) {
+    width: 481px;
+  }
+
+  >h2 {
+    margin: 0;
+    margin-right: 20px;
+    font-size: 32px;
+
+    @media(max-width: $mobileOnlyWidth) {
+      font-size: 25px;
+    }
+    
+    @media(min-width: $tabletWidth) {
+      font-size: 40px;
+    }
+  }
+}
+
+.containerLink {
+  display: flex;
+  align-items: center;
+}
+
+.iconLink {
+  width: 55px;
+  height: 55px;
+  padding: 5px;
+
+  @media(min-width: $tabletWidth) {
+    width: 74px;
+    height: 74px;
+  }
+
+  >img {
+    width: 45px;
+    height: 45px;
+
+    @media(min-width: $tabletWidth) {
+      width: 64px;
+      height: 64px;
+    }
+  }
 }
