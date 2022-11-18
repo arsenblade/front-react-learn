@@ -4,7 +4,27 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: auto;    
+  margin: auto; 
+
+  @media(max-width: $tabletWidth) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 110px;
+  }
+
+  @media(max-width: 800px) {
+    width: 640px;
+  }
+
+  @media(max-width: 600px) {
+    width: 460px;
+  }
+
+  @media(max-width: $mobileOnlyWidth) {
+    width: 380px;
+    padding: 0 10px;
+  }
 }
 
 .authForm {
@@ -17,10 +37,28 @@
   margin: auto;
   border-radius: 10px;
 
-  >h1 {
+  @media(max-width: $tabletWidth) {
+    width: 600px;
+  }
+
+  @media(max-width: 800px) {
+    width: 100%;
+  }
+
+  .title {
     text-align: center;
     margin: 0;
     margin-bottom: 20px;
+
+    @media(max-width: $tabletWidth) {
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 50px;
+    }
+
+    @media(max-width: 600px) {
+      font-size: 40px;
+    }
   }
 
   .field {
@@ -35,6 +73,15 @@
     padding: 5px;
     &::placeholder {
       color: rgba($color: rgb(0, 0, 0), $alpha: 0.6)
+    }
+
+    @media(max-width: $tabletWidth) {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    @media(max-width: 600px) {
+      font-size: 32px;
     }
   }
 
@@ -56,11 +103,17 @@
       }
     }
 
-    @media(max-width: $mobileOnlyWidth) {
-      flex-direction: column;
+    @media(max-width: $tabletWidth) {
+      flex-direction: column-reverse;
+
       >a {
-        order: 1;
-        margin-top: 15px;
+        font-size: 30px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      >a {
+        font-size: 26px;
       }
     }
   }
@@ -71,6 +124,20 @@
     width: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+
+    @media(max-width: $tabletWidth) {
+      width: 100%;
+      font-size: 32px;
+      height: 60px;
+    }
+
+    @media(max-width: 600px) {
+      font-size: 28px;
+    }
+
+    @media(max-width: $mobileOnlyWidth) {
+      font-size: 26px;
+    }
   }
 
   button {
@@ -80,5 +147,20 @@
     &:disabled {
       opacity: 0.6;
     }
+
+    @media(max-width: $tabletWidth) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+label {
+  @media(max-width: $tabletWidth) {
+    font-size: 36px;
+  }
+
+  @media(max-width: 600px) {
+    font-size: 30px;
   }
 }

@@ -2,9 +2,10 @@
 
 .navBar {
     display: flex;
-    height: 100px;
+    height: 22px;
     width: 100%;
     position: relative;
+    background-color: $blackBackground;
     z-index: 100;
 
     @media(max-width: $tabletWidth) {
@@ -15,27 +16,34 @@
     
       @media(max-width: 800px) {
         width: 640px;
-        margin: 0 auto;
-        padding: 0 20px;
       }
     
       @media(max-width: 600px) {
         width: 460px;
-        margin: 0 auto;
-        padding: 0 20px;
       }
     
       @media(max-width: $mobileOnlyWidth) {
         width: 380px;
-        margin: 0 auto;
         padding: 0 10px;
       }
 }
 
-.navBarList {
+.navBarListDesktop {
     display: flex;
     align-items: center;
     width: 100%;
+
+    @media(max-width: $tabletWidth) {
+        display: none;
+    }
+}
+
+.navBarListMobile {
+    @media(min-width:$tabletWidth) {
+        &Opened {
+            display: none;
+        }
+    }
 
     @media(max-width:$tabletWidth) {
         &Opened {
@@ -49,7 +57,12 @@
             transform: translate(-50%, 0);
             align-items: center;
             justify-content: center;
-    
+            height: 100vh;
+            justify-content: flex-start;
+            overflow-y: auto;
+            padding-bottom: 122px;
+
+
             @media(max-width: 650px) {
                 width: 650px;
             }
@@ -73,7 +86,8 @@
     }
 }
 
-.navBarListClosed {
+
+.closeDesktopVersion {
     @media(max-width:$tabletWidth) {
         display: none;
     }
@@ -81,11 +95,6 @@
 
 .navBarItem {
     margin-left: 15px;
-
-
-    &:nth-child(3) {
-        margin-left: auto;
-    }
 
     @media(min-width:$tabletWidth) {
         display: none;
@@ -96,14 +105,49 @@
         background-color: #242424;
         width: 100%;
         align-items: center;
-
-        &:nth-child(3) {
-            margin-left: 0;
-            text-align: center;
-            padding: 25px;
-            border-bottom: 3px solid black;
-        }
+        border-bottom: 3px solid black;
     }
+}
+
+.navBarLink {
+    display: none;
+
+    @media(max-width:$tabletWidth) {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        background-color: #242424;
+        width: 100%;
+        border-bottom: 3px solid black;
+    }
+}
+
+.profileLink {
+    padding: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4em;
+}
+
+.adminLink {
+    padding: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4em;
+}
+
+.loginLink {
+    padding: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4em;
+}
+
+.logout {
+    padding: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4em;
 }
 
 .select {
@@ -116,10 +160,18 @@
     display: flex;
     column-gap: 40px;
     margin-left: 50px;
+
+    @media(max-width:$tabletWidth) {
+        display: none;
+    }
 }
 
 .userMenu {
     margin-left: auto;
+
+    @media(max-width:$tabletWidth) {
+        display: none;
+    }
 }
 
 .authorizationLink {
@@ -131,6 +183,10 @@
     &:hover {
         animation: hover-link 0.4s forwards;
     }
+
+    @media(max-width:$tabletWidth) {
+        display: none;
+    }
 }
 
 .coursesList {
@@ -138,7 +194,6 @@
     @media(max-width:$tabletWidth) {
         display: flex;
         flex-direction: column;
-        align-items: center;
         border-bottom: 3px solid black;
     }
 
@@ -196,28 +251,29 @@
     }
 }
 
-.navBarListClosed + .navToggle::before {
+.closeBtn::before {
     content: "";
     position: absolute;
     width: 50px;
     height: 4px;
     top: 20px;
-    left: 15px;
+    left: 19px;
     border-radius: 1px;
     background-color: #ffffff;
     box-shadow: 0 10px 0 0 #ffffff, 0 20px 0 0 #ffffff;
 }
 
-.navBarListOpened + .navToggle {
+.openBtn {
     &::before,
     &::after {
       content: "";
       position: absolute;
       display: block;
       top: 30px;
-      left: 26px;
-      width: 30px;
-      height: 2px;
+      left: 29%;
+      transform: translate(-30px, 0);
+      width: 40px;
+      height: 4px;
       background-color: #ffffff;
     }
   

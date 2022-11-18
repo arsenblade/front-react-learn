@@ -59,7 +59,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
     <div className={styles.authContainer}>
         <form className={cn(styles.authForm, {
         })} onSubmit={handleSubmit(onSubmit)}>
-          <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
+          <h1 className={styles.title}>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
 
           {type === 'registration' && 
             <div className={styles.field}>

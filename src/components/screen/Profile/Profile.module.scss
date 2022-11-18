@@ -1,6 +1,9 @@
 @import '../../../styles/variables.scss';
 
 .profile {
+  @media(max-width: $tabletWidth) {
+    margin-top: 120px;
+  }
 
   .contentContainer {
     width: 100%;

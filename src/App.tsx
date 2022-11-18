@@ -1,6 +1,7 @@
 import MainProvider from './main-provider/MainProvider';
 
 function App() {
+
   return (
     <div className="app">
       <MainProvider>
