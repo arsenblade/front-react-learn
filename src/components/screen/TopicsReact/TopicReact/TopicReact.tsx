@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import Button from '../../../ui/Button/Button'
 import styles from './TopicReact.module.scss'
 import cn from 'classnames'
+import Footer from '../../Footer/Footer'
 
 const img = require('../../../../assets/img/react-poster.png')
 

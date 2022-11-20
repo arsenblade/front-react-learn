@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../../ui/Button/Button'
-import InfoCircle from '../../../ui/info-circle/InfoCircle'
+import InfoCircle from '../../../ui/Info-circle/InfoCircle'
 import styles from './OurProgram.module.scss'
 
 const OurProgram = () => {

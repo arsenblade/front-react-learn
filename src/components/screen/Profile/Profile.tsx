@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ProfileContent from './ProfileContent/ProfileContent'
 import ProfileHeader from './ProfileHeader/ProfileHeader'
 import styles from './Profile.module.scss'
+import Footer from '../Footer/Footer'
 
 const Profile = () => {
   const [typeContent, setTypeContent] = useState<'statistics' | 'settings'>('settings')
@@ -12,6 +13,7 @@ const Profile = () => {
       <div className={styles.contentContainer}>
         <ProfileContent type={typeContent} setValue={setTypeContent} value={typeContent}/>
       </div>
+      <Footer color='white' />
     </div>
   )
 }
