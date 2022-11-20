@@ -9,32 +9,24 @@
   padding-right: 40px;
   max-width: 1440px;
   color: white;
-  margin-bottom: 50px;
 
   @media(max-width: $tabletWidth) {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-bottom: 50px;
   }
 
   @media(max-width: 800px) {
     width: 640px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin-bottom: 50px;
   }
 
   @media(max-width: 600px) {
     flex-direction: column;
     width: 460px;
-    margin: 0 auto;
-    padding: 0 20px;
   }
 
   @media(max-width: $mobileOnlyWidth) {
     width: 380px;
-    margin: 0 auto;
     padding: 0 10px;
   }
 
@@ -219,6 +211,8 @@
 
     @media(max-width: 600px) {
       width: 100%;
+      padding-right: 0;
+      margin-right: 0;
     }
 
     .title {

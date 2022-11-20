@@ -2,6 +2,7 @@ import React from 'react'
 import { ISlider } from '../../../types/slider.types'
 import SliderThemeDesktop from '../../ui/SliderTheme/SliderThemeDesktop/SliderThemeDesktop'
 import SliderThemeMobile from '../../ui/SliderTheme/SliderThemeMobile/SliderThemeMobile'
+import Footer from '../Footer/Footer'
 import styles from './TopicsReact.module.scss'
 
 const TopicsReact = () => {
@@ -20,6 +21,7 @@ const TopicsReact = () => {
       <div className={styles.sliderMobile}>
         <SliderThemeMobile sliders={slidersTest} />
       </div>
+      <Footer color='white' />
     </div>
   )
 }

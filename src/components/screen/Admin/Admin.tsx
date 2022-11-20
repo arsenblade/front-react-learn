@@ -3,6 +3,7 @@ import AdminHeader from './AdminHeader/AdminHeader'
 import AdminStatistics from './AdminStatistics/AdminStatistics'
 import styles from './Admin.module.scss'
 import AdminCreateTopic from './AdminCreateTopic/AdminCreateTopic'
+import Footer from '../Footer/Footer'
 
 interface AdminProps {
   type: 'statistics' | 'createTopic'
@@ -17,6 +18,7 @@ const Admin:FC<AdminProps> = ({type}) => {
         {type === 'createTopic' && <AdminCreateTopic />}
         {type === 'statistics' && <AdminStatistics />}
       </div>
+      <Footer color='white' />
     </div>
   )
 }
