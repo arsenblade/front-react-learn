@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../ui/Button/Button'
 import FormInput from '../../../ui/FormInput/FormInput'
+import Textarea from '../../../ui/Textarea/Textarea'
 import styles from './AdminCreateTopic.module.scss'
 
 const AdminCreateTopic = () => {
@@ -17,7 +18,7 @@ const AdminCreateTopic = () => {
           </div>
           <div className={styles.containerDescriptionInput}>
             <span>Описание темы</span>
-            <textarea className={styles.descriptionInput}></textarea>
+            <Textarea className={styles.descriptionInput}/>
           </div>
         </div>
       </div>
@@ -36,19 +37,19 @@ const AdminCreateTopic = () => {
             <div className={styles.containerAnswersInput}>
               <div className={styles.containerAnswerInput}>
                 <span>1</span>
-                <textarea className={styles.answerInput}/>
+                <Textarea className={styles.answerInput}/>
               </div>
               <div className={styles.containerAnswerInput}>
                 <span>2</span>
-                <textarea className={styles.answerInput}/>
+                <Textarea className={styles.answerInput}/>
               </div>
               <div className={styles.containerAnswerInput}>
                 <span>3</span>
-                <textarea className={styles.answerInput}/>
+                <Textarea className={styles.answerInput}/>
               </div>
               <div className={styles.containerAnswerInput}>
                 <span>4</span>
-                <textarea className={styles.answerInput}/>
+                <Textarea className={styles.answerInput}/>
               </div>
             </div>
           </div>
