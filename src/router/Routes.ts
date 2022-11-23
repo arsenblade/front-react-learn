@@ -22,7 +22,7 @@ enum Routes {
   PROFILE_ROUTE = '/profile',
   TOPICS_REACT_ROUTE = '/topics/react',
   TOPIC_REACT_ROUTE = '/topics/react/:id',
-  TOPIC_TEST_ROUTE = '/topics/test/:id',
+  TOPIC_TEST_ROUTE = '/topics/test/:idTest',
   MANAGE_STATISTICS_ROUTE = '/manage/statistics',
   MANAGE_CREATE_TOPIC_ROUTE = '/manage/create/topic'
 }

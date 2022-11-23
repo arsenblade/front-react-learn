@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { MyToast } from "../../components/ui/MyToast/MyToast";
 import { getStoreLocal } from "../../utils/getStoreLocal";
 import { login, logout, registration } from "./auth.actions";
-import { IInitialStateAuth } from "./auth.interface";
+import { IInitialStateAuth, IUserState } from "./auth.interface";
 
 
 const initialState: IInitialStateAuth  = {
   isLoading: false,
   error: '',
-  user: getStoreLocal('user'),
+  user: getStoreLocal<IUserState>('user'),
 }
 
 export const authSlice = createSlice({
@@ -25,7 +25,7 @@ export const authSlice = createSlice({
         name: payload.name,
         id: payload.id,
         avatar: payload.avatar,
-        pointQuestions: payload.pointQuestions,
+        pointTests: payload.pointTests,
         isAdmin: payload.isAdmin
       }
       MyToast('Вы успешно зарегистрировались', true)
@@ -44,7 +44,7 @@ export const authSlice = createSlice({
         name: payload.name,
         id: payload.id,
         avatar: payload.avatar,
-        pointQuestions: payload.pointQuestions,
+        pointTests: payload.pointTests,
         isAdmin: payload.isAdmin
       }
       MyToast('Вы успешно авторизировались', true)

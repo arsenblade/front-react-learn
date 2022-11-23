@@ -14,19 +14,22 @@ interface INavBarProps {
   Auth: boolean
 }
 
-const testSelect: IOption[] = [{label: 'Реакт - курс для новичков', value: 'react-beginners-course'}, {label: 'Реакт - курс для провдинутых', value: 'react-advanced-course'}, {label: '5 небольших проектов для резюме', value: 'react-five-project-course'}]
+interface IMenuOptions {
+  value: string,
+  label: string
+}
 
-const testSelect2: IOption[] = [ {label: 'Реакт - курс для провдинутых', value: 'react-advanced-course'}, {label: '5 небольших проектов для резюме', value: 'react-five-project-course'}]
+const allCourseSelect: IOption[] = [{label: 'Курс - реакт разработчик', value: 'react-developer-course', link: '/'}]
 
-const userMenuItems: IOption[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Выход', value: 'exit'}]
+const myLearnSelect: IOption[] = [ {label: 'Реакт разработчик', value: 'react-developer-learn', link: '/topics/react'}]
 
-const adminMenuItems: IOption[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Админ панель', value: 'admin-panel'}, {label: 'Выход', value: 'exit'}]
+const userMenuItems: IMenuOptions[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Выход', value: 'exit'}]
+
+const adminMenuItems: IMenuOptions[] = [ {label: 'Личный кабинет', value: 'personal-area'}, {label: 'Админ панель', value: 'admin-panel'}, {label: 'Выход', value: 'exit'}]
 
 const NavBar:FC<INavBarProps> = ({Auth}) => {
  const [navBarListVisible, setNavBarListVisible] = useState<boolean>(false)
- const [valueCourse, setValueCourse] = useState<IOption | undefined>()
- const [valueMyTraining, setValueMyTraining] = useState<IOption | undefined>()
- const [valueMySettings, setValueMySettings] = useState<IOption | undefined>()
+ const [valueMySettings, setValueMySettings] = useState<IMenuOptions | undefined>()
  const {logout} = useActions()
  const {user, isLoading} = useAuth()
 
@@ -43,10 +46,10 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
         >
         <div className={cn(styles.navBarListMobile, styles.navBarListMobileOpened)}>
           <div className={styles.navBarItem}>
-            <MobileMenuSelect options={testSelect} title='Курсы' />
+            <MobileMenuSelect options={allCourseSelect} title='Курсы' />
           </div>
           {user && <div className={styles.navBarItem}>
-            <MobileMenuSelect options={testSelect2} title='Мое обучение' />           
+            <MobileMenuSelect options={myLearnSelect} title='Мое обучение' />           
           </div>}
           {user && <div className={styles.navBarLink}>
             <Link to="/profile" className={styles.profileLink} onClick={()=>{setNavBarListVisible(false)}}>Личный кабинет</Link>
@@ -62,8 +65,8 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
       </CSSTransition>
       <div className={cn(styles.navBarListDesktop)}>
           <div className={styles.selectContainer}>
-            <Select onChange={setValueCourse} value={valueCourse} options={testSelect} placeholder='Курсы'/>
-            <Select onChange={setValueMyTraining} value={valueMyTraining} options={testSelect2} placeholder='Мое обучение'/>
+            <Select options={allCourseSelect} placeholder='Курсы'/>
+            <Select options={myLearnSelect} placeholder='Мое обучение'/>
           </div>
           {user && <div className={styles.userMenu}>
             <UserMenu isAdmin={user.isAdmin} options={user.isAdmin === true ? adminMenuItems : userMenuItems} onChange={setValueMySettings} value={valueMySettings}/>

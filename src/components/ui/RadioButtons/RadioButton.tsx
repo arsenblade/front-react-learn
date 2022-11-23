@@ -4,16 +4,18 @@ import cn from 'classnames'
 
 interface IRadio {
   children: ReactNode,
+  type: string,
+  onChange?: (checked: boolean) => void,
+  checked?: boolean,
   className?: string,
-  type: string
 }
 
-const RadioButton:FC<IRadio> = ({children, className, type}) => {
+const RadioButton:FC<IRadio> = ({children, className, type, onChange, checked}) => {
   return (
     <label className={cn(styles.radioLabel, {
 	  [`${className}`]: className && className
 	})}>
-	  <input type="radio" className={styles.radioInput} name={type} />
+	  <input type="radio" onChange={(e) => onChange &&  onChange(e.currentTarget.checked)} className={styles.radioInput} name={type} checked={checked}/>
 	  <span className={styles.fakeRadio}></span>
 	  <p className={styles.radioText}>{children}</p>
 	</label>

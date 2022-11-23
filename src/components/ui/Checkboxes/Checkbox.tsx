@@ -4,15 +4,17 @@ import cn from 'classnames'
 
 interface ICheckbox {
   children: ReactNode,
+	onChange?: (checked: boolean) => void,
+	checked?: boolean,
   className?: string
 }
 
-const Checkbox:FC<ICheckbox> = ({children, className}) => {
+const Checkbox:FC<ICheckbox> = ({children, className, onChange, checked}) => {
   return (
     <label className={cn(styles.checkboxLabel, {
 	  [`${className}`]: className && className
 	})}>
-	  <input type="checkbox" className={styles.checkboxInput} />
+	  <input type="checkbox" onChange={(e) => onChange &&  onChange(e.currentTarget.checked)} className={styles.checkboxInput} checked={checked} />
 	  <span className={styles.fakeCheckbox}></span>
 	  <p className={styles.checkboxText}>{children}</p>
 	</label>

@@ -49,15 +49,31 @@
   background-color: $black;
 }
 
-.btn:hover {
+.noDisabled {
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.noDisabled:hover {
   color: white;
   background-color: transparent;
+}
+
+.disabled {
+  opacity: 0.6;
 }
 
 
 .btn:hover span {
   transform: translateY(0) scale(2);
 }
+
+.disabled:hover span {
+  transform: none;
+  display: none;
+}
+
 
 .spanOne:nth-child(1) {
   --n: 1;

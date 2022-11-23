@@ -1,17 +1,18 @@
-export interface IAllQuestion {
+export interface ITest {
   id: string;
-  currentQuestions: ICurrentQuestions[]
+  currentQuestions: ICurrentQuestion[]
 }
 
-export interface ICurrentQuestions {
+export interface ICurrentQuestion {
   id: string;
-  title: string;
-  correctAnswerId: string;
-  allAnswer: IAllAnswer[]
+  textQuestion: string;
+  correctAnswerId: string[];
+  allAnswer: IAnswer[]
 }
 
-export interface IAllAnswer {
+export interface IAnswer {
   id: string;
-  title: string;
+  idQuestion: string;
+  textAnswer: string;
 }
 

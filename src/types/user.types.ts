@@ -5,12 +5,12 @@ export interface IUser {
   name: string;
   avatar: string;
   isAdmin: boolean;
-  pointQuestions: IPointQuestions[]
+  pointTests: IPointTest[]
 }
 
 
-export interface IPointQuestions {
-  idQuestions: string;
+export interface IPointTest {
+  idTest: string;
   points: string;
 }
 
