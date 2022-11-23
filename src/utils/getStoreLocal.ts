@@ -1,6 +1,4 @@
-import { IUserState } from "../store/auth/auth.interface";
-
-export const getStoreLocal = (name: string): IUserState | null => {
+export const getStoreLocal = <T>(name: string): T | null => {
   if(typeof localStorage !== 'undefined') {
     const ls = localStorage.getItem(name);
     return ls ? JSON.parse(ls) : null;

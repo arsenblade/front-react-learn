@@ -10,10 +10,12 @@ import { getClassAnimation } from '../../../utils/getClassAnimation'
 const Select:FC<ISelect> = ({options, placeholder}) => {
   const [isVisibleDropdown, setIsVisibleDropdown] = useState<undefined | 'visible' | 'invisible'>()
   const classAnimation = getClassAnimation(options.length)
+  const navigate = useNavigate()
 
 
   const handleClickOption = (option: IOption) => {
     setIsVisibleDropdown('invisible')
+    navigate(option.link)
   }
 
   const handleClickInput = () => {

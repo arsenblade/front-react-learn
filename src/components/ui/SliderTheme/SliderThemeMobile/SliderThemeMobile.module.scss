@@ -1,11 +1,11 @@
 @import '../../../../styles/variables.scss';
 
 .swiperCard {
-  width: 84%;
-  height: 500px;
+  width: 62%;
+  height: 560px;
 
   >div > div {
-    height: 500px;
+    height: 560px;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -18,6 +18,10 @@
 
     .img {
       border-radius: 10px;
+
+      @media(max-width: $mobileOnlyWidth) {
+        height: 150px;
+      }
     }
 
     .title {
@@ -35,11 +39,14 @@
       }
     }
 
-    .btn {
-      width: 100%;
-      height: 60px;
-      font-size: 26px;
+    .btnContainer {
       margin-top: auto;
+
+      .btn {
+        width: 100%;
+        height: 60px;
+        font-size: 26px;
+      }
     }
   }
 }

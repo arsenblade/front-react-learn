@@ -7,34 +7,64 @@
       "name": "Yen",
       "avatar": "/avatar",
       "isAdmin": true,
-      "pointQuestions": [
+      "pointTests": [
         {
-          "idQuestions": "2",
-          "points": "6"
+          "idTest": "2",
+          "points": "2"
         }
       ]
-    },
-    {
-      "id": "165870c3-aec9-4257-a518-194a6f3ca9e9",
-      "pointQuestions": [],
-      "email": "test1@mail.ru",
-      "password": "123456",
-      "name": "Arsen",
-      "avatar": ""
     }
   ],
-  "allQuestions": [
+  "allTest": [
     {
       "id": "2",
       "currentQuestions": [
         {
           "id": "3",
-          "title": "Title",
-          "correctAnswerId": "5",
-          "allAnswers": [
+          "textQuestion": "Title",
+          "correctAnswerId": [
+            "5",
+            "44"
+          ],
+          "allAnswer": [
             {
               "id": "5",
-              "title": "Answer"
+              "idQuestion": "3",
+              "textAnswer": "Answer"
+            },
+            {
+              "id": "44",
+              "idQuestion": "3",
+              "textAnswer": "Answer"
+            },
+            {
+              "id": "55",
+              "idQuestion": "3",
+              "textAnswer": "Answer"
+            }
+          ]
+        },
+        {
+          "id": "31",
+          "textQuestion": "Title",
+          "correctAnswerId": [
+            "51"
+          ],
+          "allAnswer": [
+            {
+              "id": "51",
+              "idQuestion": "31",
+              "textAnswer": "AnswerC"
+            },
+            {
+              "id": "444",
+              "idQuestion": "31",
+              "textAnswer": "Answer"
+            },
+            {
+              "id": "555",
+              "idQuestion": "31",
+              "textAnswer": "Answer"
             }
           ]
         }
@@ -43,12 +73,34 @@
   ],
   "topicsOfStudy": [
     {
-      "id": "4",
+      "id": "13",
       "titleTopic": "Topic",
-      "pictureTopicUrl": "/picture",
+      "descriptionTopic": "Descritpion Descritpion Descritpion Descritpion",
+      "pictureTopicUrl": "react-poster.png",
       "passedTopic": false,
-      "videoUrl": "/video",
-      "relatedQuestionsId": "2"
+      "videoUrl": "tor-4-video.mp4",
+      "relatedQuestionsId": "2",
+      "numberTopic": 1
+    },
+    {
+      "id": "14",
+      "titleTopic": "Topic",
+      "descriptionTopic": " Descritpion Descritpion Descritpion Descritpion Descritpion",
+      "pictureTopicUrl": "react-poster.png",
+      "passedTopic": false,
+      "videoUrl": "tor-4-video.mp4",
+      "relatedQuestionsId": "2",
+      "numberTopic": 2
+    },
+    {
+      "id": "15",
+      "titleTopic": "Topic",
+      "descriptionTopic": "Descritpion Descritpion Descritpion Descritpion",
+      "pictureTopicUrl": "react-poster.png",
+      "passedTopic": false,
+      "videoUrl": "tor-4-video.mp4",
+      "relatedQuestionsId": "2",
+      "numberTopic": 3
     }
   ]
 }

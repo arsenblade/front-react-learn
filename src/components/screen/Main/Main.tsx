@@ -1,4 +1,5 @@
 import React from 'react'
+import { useActions } from '../../../hooks/useActions'
 import Footer from '../Footer/Footer'
 import AfterLearnCourse from './AfterLearnCourse/AfterLearnCourse'
 import CourseAuthors from './CourseAuthors/CourseAuthors'

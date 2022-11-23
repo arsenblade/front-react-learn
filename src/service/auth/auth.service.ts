@@ -30,7 +30,7 @@ export const authService = {
  
     const defaultUser: IUser = {
       id: uuid.v4(),
-      pointQuestions: [],
+      pointTests: [],
       email,
       password,
       name,

@@ -7,16 +7,17 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 
 import { EffectCards } from "swiper";
-import { ISlider } from "../../../../types/slider.types";
 import Button from "../../Button/Button";
-
-const img = require('../../../../assets/img/react-poster.png')
+import { ITopic } from "../../../../types/topic.types";
+import { Link, useNavigate } from "react-router-dom";
 
 interface SliderThemeMobileProps {
-  sliders: ISlider[]
+  sliders: ITopic[]
 }
 
 const SliderThemeMobile:FC<SliderThemeMobileProps> = ({sliders}) => {
+  const navigate = useNavigate()
+
   return (
     <>
       <Swiper
@@ -26,11 +27,11 @@ const SliderThemeMobile:FC<SliderThemeMobileProps> = ({sliders}) => {
         className={styles.swiperCard}
       >
           {sliders.map((slider, idx) =>     
-            <SwiperSlide key={idx}>
-              <img className={styles.img} height={180} src={img} alt="Постер."/>
-              <h2 className={styles.title}>#{idx + 1} {slider.titleTheme}</h2>
-              <p className={styles.description}>{slider.descriptionTheme}</p>
-              <Button className={styles.btn} color="Pink">Начать</Button>
+            <SwiperSlide key={slider.id}>
+              <img className={styles.img} height={180} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
+              <p className={styles.description}>{slider.descriptionTopic}</p>
+              <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
           </SwiperSlide>)}
       </Swiper>
     </>

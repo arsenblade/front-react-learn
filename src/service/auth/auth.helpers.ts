@@ -4,7 +4,7 @@ import { IUser } from "../../types/user.types"
 export const saveTokenStorage = (token: string, user: IUser) => {
   localStorage.setItem('accessToken', token)
   const userStorage: IUserState = {
-    pointQuestions: user.pointQuestions,
+    pointTests: user.pointTests,
     avatar: user.avatar,
     name: user.name,
     id: user.id,

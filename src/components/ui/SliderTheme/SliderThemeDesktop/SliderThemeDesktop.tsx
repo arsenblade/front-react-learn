@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from './SliderThemeDesktop.module.scss'
 import "swiper/css";
@@ -8,12 +8,11 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import Button from "../../Button/Button";
-import { ISlider } from "../../../../types/slider.types";
-
-const img = require('../../../../assets/img/react-poster.png')
+import { ITopic } from "../../../../types/topic.types";
+import { Link } from "react-router-dom";
 
 interface SliderThemeDesktopProps {
-  sliders: ISlider[]
+  sliders: ITopic[]
 }
 
 const SliderThemeDesktop:FC<SliderThemeDesktopProps> = ({sliders}) => {
@@ -33,11 +32,11 @@ const SliderThemeDesktop:FC<SliderThemeDesktopProps> = ({sliders}) => {
           className={styles.swiperCard}
         >
           {sliders.map((slider, idx) =>     
-            <SwiperSlide key={idx}>
-              <img className={styles.img} height={180} src={img} alt="Постер."/>
-              <h2 className={styles.title}>#{idx + 1} {slider.titleTheme}</h2>
-              <p className={styles.description}>{slider.descriptionTheme}</p>
-              <Button className={styles.btn} color="Pink">Начать</Button>
+            <SwiperSlide key={slider.id}>
+              <img className={styles.img} height={200} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
+              <p className={styles.description}>{slider.descriptionTopic}</p>
+              <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
           </SwiperSlide>)}
         </Swiper>
       </div>
@@ -54,11 +53,11 @@ const SliderThemeDesktop:FC<SliderThemeDesktopProps> = ({sliders}) => {
           className={styles.swiperCard}
         >
           {sliders.map((slider, idx) =>     
-            <SwiperSlide key={idx}>
-              <img className={styles.img} height={180} src={img} alt="Постер."/>
-              <h2 className={styles.title}>#{idx + 1} {slider.titleTheme}</h2>
-              <p className={styles.description}>{slider.descriptionTheme}</p>
-              <Button className={styles.btn} color="Pink">Начать</Button>
+            <SwiperSlide key={slider.id}>
+              <img className={styles.img} height={200} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
+              <p className={styles.description}>{slider.descriptionTopic}</p>
+              <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
           </SwiperSlide>)}
         </Swiper>
       </div>
