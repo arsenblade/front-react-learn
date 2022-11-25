@@ -7,7 +7,7 @@ export interface IInitialStateCurrentTest {
   allAnswersUser: IAnswerUser[] | null;
   currentTopicTitle: string | null;
   idTest: string | null
-  nextTopicId: string  | null
+  nextTopicId: string | null
 }
 
 

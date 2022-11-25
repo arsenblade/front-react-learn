@@ -3,7 +3,7 @@ import styles from './Checkbox.module.scss'
 import cn from 'classnames'
 
 interface ICheckbox {
-  children: ReactNode,
+  children?: ReactNode,
 	onChange?: (checked: boolean) => void,
 	checked?: boolean,
   className?: string

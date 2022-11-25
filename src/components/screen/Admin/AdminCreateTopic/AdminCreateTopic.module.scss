@@ -205,7 +205,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      column-gap: 40px;
+      column-gap: 20px;
 
       .title {
         font-size: 30px;
@@ -326,6 +326,16 @@
           .containerAnswerInput {
             display: flex;
             column-gap: 20px;
+            position: relative;
+
+            .checkbox {
+              position: absolute;
+              font-size: 20px;
+              margin: 0;
+              width: max-content;
+              top: 8px;
+              right: 0;
+            }
   
             >span {
               width: 20px;
@@ -334,7 +344,8 @@
   
             .answerInput {
               font-size: 24px;
-              width: 600px;
+              width: 100%;
+              padding-right: 36px;
             }
           }
         }
