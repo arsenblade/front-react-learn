@@ -13,7 +13,7 @@ const initialState: IInitialStateCurrentTest  = {
   allAnswersUser: getStoreLocal<IAnswerUser[]>('allAnswersUser'),
   currentTopicTitle: localStorage.getItem('currentTopic'),
   idTest: getStoreLocal<string>('idTest'),
-  nextTopicId:  getStoreLocal<string>('nextTopicId'),
+  nextTopicId:  localStorage.getItem('nextTopicId'),
 }
 
 export const currentTestSlice = createSlice({
