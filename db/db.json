@@ -1,20 +1,37 @@
 {
   "users": [
     {
+      "id": "2342352",
+      "email": "test@mail.ru",
+      "password": "654321",
+      "name": "Arsen",
+      "avatar": "/avatar",
+      "isAdmin": false,
+      "pointTests": [
+        {
+          "idUser": "2342352",
+          "idTest": "2",
+          "points": 4
+        }
+      ]
+    },
+    {
       "id": "1",
       "email": "arsen@mail.ru",
       "password": "123456",
-      "name": "Yen",
+      "name": "Yen1341",
       "avatar": "/avatar",
       "isAdmin": true,
       "pointTests": [
         {
+          "idUser": "1",
           "idTest": "2",
-          "points": "2"
+          "points": 2
         },
         {
+          "idUser": "1",
           "idTest": "55f8a600-d0fa-4b15-9e32-0fd401d4e0d7",
-          "points": "3"
+          "points": 4
         }
       ]
     }
@@ -183,31 +200,13 @@
       "pictureTopicUrl": "react-poster.png",
       "videoUrl": "tor-4-video.mp4",
       "relatedQuestionsId": "2",
-      "numberTopic": 1
-    },
-    {
-      "id": "14",
-      "titleTopic": "Topic",
-      "descriptionTopic": " Descritpion Descritpion Descritpion Descritpion Descritpion",
-      "pictureTopicUrl": "react-poster.png",
-      "videoUrl": "tor-4-video.mp4",
-      "relatedQuestionsId": "2",
       "numberTopic": 2
-    },
-    {
-      "id": "15",
-      "titleTopic": "Topic",
-      "descriptionTopic": "Descritpion Descritpion Descritpion Descritpion",
-      "pictureTopicUrl": "react-poster.png",
-      "videoUrl": "tor-4-video.mp4",
-      "relatedQuestionsId": "2",
-      "numberTopic": 3
     },
     {
       "id": "42e3ef03-df32-494b-8512-8e4c0615a8b0",
       "descriptionTopic": "dgegege",
       "titleTopic": "bfdbedgerger",
-      "numberTopic": 4,
+      "numberTopic": 1,
       "relatedQuestionsId": "55f8a600-d0fa-4b15-9e32-0fd401d4e0d7",
       "pictureTopicUrl": "react-poster.png",
       "videoUrl": "tor-4-video.mp4"

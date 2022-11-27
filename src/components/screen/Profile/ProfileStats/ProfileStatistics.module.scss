@@ -1,6 +1,6 @@
 @import '../../../../styles/variables.scss';
 
-.profileSettings {
+.profileStatistics {
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -68,6 +68,7 @@
       margin: 0;
       min-height: 38px;
 
+
       @media(max-width: 1050px) {
         font-size: 24px;
       }
@@ -133,64 +134,112 @@
     }
   }
 
-  .userSettings {
-    display: flex;
+  .userStatistics {
     padding-top: 60px;
-    flex-direction: column;
-    row-gap: 40px;
+    width: 60%;
+    padding-right: 20px;
+
 
     @media(max-width: 1050px) {
       padding-top: 40px;
     }
 
-    .containerField {
+    @media(max-width: 800px) {
+      margin-right: 20px;
+      width: 56%;
+    }
+
+    @media(max-width: 600px) {
+      width: 100%;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .containerStats {
       display: flex;
-      align-items: center;
+      column-gap: 40px;
+      margin-top: 20px;
 
       @media(max-width: 800px) {
         flex-direction: column;
-        align-items: flex-start;
+        row-gap: 20px;
       }
 
-      >span {
-        font-size: 28px;
-        width: 170px;
-
-        
-        @media(max-width: 1050px) {
-          font-size: 24px;
-          width: 130px;
-        }
-        @media(max-width: 800px) {
-          margin-bottom: 6px;
-        }
-      }
-
-      .field {
+      .filledTests {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 10px;
         width: 400px;
-
-        @media(max-width: 1050px) {
-          width: 340px;
-        }
+        background-color: $black;
+        border-radius: 10px;
+        padding: 20px;
 
         @media(max-width: 800px) {
-          width: 300px;
-        }
-
-        @media(max-width: 600px) {
-          font-size: 24px;
           width: 100%;
         }
+  
+        >h2 {
+          font-size: 24px;
+          text-align: center;
+          margin: 0;
+
+          @media(max-width: 1050px) {
+            font-size: 18px;
+          }
+        }
+  
+        >h3 {
+          color: $violet;
+          font-size: 54px;
+          margin: 0;
+          text-align: center;
+
+          @media(max-width: 1050px) {
+            font-size: 40px;
+          }
+        }
       }
-    }
 
-    .btn {
-      align-self: flex-end;
+      .averageScore {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 400px;
+        background-color: $black;
+        row-gap: 10px;
+        border-radius: 10px;
+        padding: 20px;
 
-      @media(max-width: 600px) {
-        font-size: 22px;
-        width: 100%;
-        height: 60px;
+        @media(max-width: 800px) {
+          width: 100%;
+        }
+  
+        >h2 {
+          font-size: 24px;
+          text-align: center;
+          margin: 0;
+
+          @media(max-width: 1050px) {
+            font-size: 18px;
+          }
+        }
+  
+        >h3 {
+          color: $violet;
+          font-size: 54px;
+          margin: 0;
+          text-align: center;
+
+          @media(max-width: 1050px) {
+            font-size: 40px;
+          }
+        }
       }
     }
   }

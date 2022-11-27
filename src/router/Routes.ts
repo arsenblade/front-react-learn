@@ -4,7 +4,8 @@ import AdminStatisticsPage from "../pages/Admin/AdminStatistics";
 import LoginPage from "../pages/Auth/login";
 import RegistrationPage from "../pages/Auth/registration";
 import MainPage from "../pages/MainPage";
-import ProfilePage from "../pages/Profile/Profile";
+import ProfileSettingsPage from "../pages/Profile/ProfileSettins";
+import ProfileStatisticsPage from "../pages/Profile/ProfileStatistics";
 import TopicReactPage from "../pages/TopicsReact/TopicReact/TopicReact";
 import TopicsReactPage from "../pages/TopicsReact/TopicsReact";
 import TopicTestPage from "../pages/TopicsReact/TopicTest/TopicTest";
@@ -19,7 +20,8 @@ enum Routes {
   MAIN_ROUTE = '/',
   LOGIN_ROUTE = '/login',
   REGISTRATION_ROUTE = '/registration',
-  PROFILE_ROUTE = '/profile',
+  PROFILE_SETTINGS_ROUTE = '/profile/settings',
+  PROFILE_STATISTICS_ROUTE = '/profile/statistics',
   TOPICS_REACT_ROUTE = '/topics/react',
   TOPIC_REACT_ROUTE = '/topics/react/:id',
   TOPIC_TEST_ROUTE = '/topics/test/:idTest',
@@ -48,8 +50,12 @@ export const authRoutes: IRoute[] = [
     Component: MainPage
   },
   {
-    path: Routes.PROFILE_ROUTE,
-    Component: ProfilePage
+    path: Routes.PROFILE_SETTINGS_ROUTE,
+    Component: ProfileSettingsPage
+  },
+  {
+    path: Routes.PROFILE_STATISTICS_ROUTE,
+    Component: ProfileStatisticsPage
   },
   {
     path: Routes.TOPICS_REACT_ROUTE,

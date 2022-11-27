@@ -10,7 +10,7 @@ import PresentCourse from './PresentCourse/PresentCourse'
 
 const Main = () => {
   return (
-    <div>
+    <>
       <PresentCourse />
       <AfterLearnCourse />
       <OurProgram />
@@ -18,7 +18,7 @@ const Main = () => {
       <CourseAuthors />
       <PaymentCourse />
       <Footer color='black' />
-    </div>
+    </>
   )
 }
 
