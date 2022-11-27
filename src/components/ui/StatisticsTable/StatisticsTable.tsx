@@ -10,9 +10,10 @@ interface IStatUser {
 interface IStatistics {
   data: IStatUser[];
   color: 'pink' | 'violet'
+  percent: boolean
 }
 
-const StatisticsTable:FC<IStatistics> = ({data, color}) => {
+const StatisticsTable:FC<IStatistics> = ({data, color, percent}) => {
   return (
     <div className={styles.statTableContainer}>
       <div className={cn(styles.statTable, {
@@ -23,14 +24,14 @@ const StatisticsTable:FC<IStatistics> = ({data, color}) => {
           if(statData.isFilled === true) {
             return (
             <div className={styles.statBar}  key={idx}>
-              <div className={styles.bodyBarContainer} style={{height: `${statData.value * 10}%`}}>
+              <div className={styles.bodyBarContainer} style={{height: percent === true ? `${statData.value}%` :  `${statData.value*10 * 2}%`}}>
                 <div className={cn(styles.bodyBar, {
                   [styles.pinkBody]: color === 'pink',
                   [styles.violetBody]: color === 'violet'
                 })}>
                   <div className={cn(styles.valueBar, {
                     [styles.valueZero]: statData.value === 0,
-                  })}>{statData.value}
+                  })}>{percent === true ? `${statData.value}%` : `${statData.value}`}
                   </div>
                 </div>
                 <div className={styles.numberBar}>#{idx + 1}</div>

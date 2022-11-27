@@ -8,6 +8,11 @@
   max-width: 1440px;
   color: white;
   margin-bottom: 50px;
+  min-height: 575px;
+
+  @media(max-width: 1050px) {
+    min-height: 564px;
+  }
 
   @media(max-width: $tabletWidth) {
     max-width: 800px;
@@ -23,7 +28,7 @@
 
   @media(max-width: 600px) {
     width: 460px;
-    padding: 0;
+    min-height: 554px;
   }
 
   @media(max-width: $mobileOnlyWidth) {
@@ -45,9 +50,9 @@
   }
 
   .sliderDesktop {
-    @media(max-width: 600px) {
-      display: none;
-    }
+    // @media(max-width: 600px) {
+    //   display: none;
+    // }
   }
 
   .sliderMobile {
@@ -56,5 +61,20 @@
     @media(max-width: 600px) {
       display: block;
     }
+  }
+}
+
+.loadingAnimation {
+  animation: loading-animation 0.4s forwards;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

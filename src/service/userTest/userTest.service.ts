@@ -26,12 +26,13 @@ export const userTest = {
     const pointTestIndex = userData.pointTests.findIndex(pTest => pTest.idTest === idTest)
 
     if(pointTestIndex !== undefined && pointTestIndex !== -1) {
-      userData.pointTests[pointTestIndex].points = points
+      userData.pointTests[pointTestIndex].points = Number(points)
     }
     else {
       userData.pointTests.push({
+        idUser,
         idTest,
-        points
+        points: Number(points)
       })
     }
     

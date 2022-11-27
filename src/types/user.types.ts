@@ -10,8 +10,9 @@ export interface IUser {
 
 
 export interface IPointTest {
+  idUser: string;
   idTest: string;
-  points: string;
+  points: number;
 }
 
 export interface IStatUser {
