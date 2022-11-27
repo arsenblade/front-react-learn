@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { Link } from 'react-router-dom'
 import { MobileMenuSelectProps } from './mobile-menu-select.interface'
 
-const MobileMenuSelect:FC<MobileMenuSelectProps> = ({options, title}) => {
+const MobileMenuSelect:FC<MobileMenuSelectProps> = ({options, title, setVisibleMenu}) => {
   const [isOpen, setIsOpen] = useState<undefined | 'open' | 'close'>()
 
   const handleClickMenu = () => {
@@ -29,7 +29,7 @@ const MobileMenuSelect:FC<MobileMenuSelectProps> = ({options, title}) => {
     >
       <h4 className={styles.title}>{title}</h4>
       <div className={styles.containerLink}>
-        {options.map(option => <Link key={option.label} className={styles.link} to='/'>{option.label}</Link>)}
+        {options.map(option => <Link key={option.label} className={styles.link} to={option.link} onClick={() => setVisibleMenu(false)}>{option.label}</Link>)}
       </div>
     </div>
   )

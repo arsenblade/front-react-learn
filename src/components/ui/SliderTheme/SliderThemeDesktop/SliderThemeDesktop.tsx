@@ -33,7 +33,7 @@ const SliderThemeDesktop:FC<SliderThemeDesktopProps> = ({sliders}) => {
         >
           {sliders.map((slider, idx) =>     
             <SwiperSlide key={slider.id}>
-              <img className={styles.img} height={200} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <img className={styles.img} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
               <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
               <p className={styles.description}>{slider.descriptionTopic}</p>
               <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
@@ -54,7 +54,28 @@ const SliderThemeDesktop:FC<SliderThemeDesktopProps> = ({sliders}) => {
         >
           {sliders.map((slider, idx) =>     
             <SwiperSlide key={slider.id}>
-              <img className={styles.img} height={200} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <img className={styles.img} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
+              <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
+              <p className={styles.description}>{slider.descriptionTopic}</p>
+              <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
+            </SwiperSlide>)}
+        </Swiper>
+      </div>
+      <div className={styles.mobileContainer}>
+        <Swiper
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={30}
+          pagination={{
+            type: "fraction"
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className={styles.swiperCard}
+        >
+          {sliders.map((slider, idx) =>     
+            <SwiperSlide key={slider.id}>
+              <img className={styles.img} src={require('../../../../assets/img/react-poster.png')} alt="Постер."/>
               <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
               <p className={styles.description}>{slider.descriptionTopic}</p>
               <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>

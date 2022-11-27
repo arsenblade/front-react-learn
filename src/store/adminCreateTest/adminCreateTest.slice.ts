@@ -45,7 +45,7 @@ export const createTestSlice = createSlice({
   initialState,
   reducers: {
     addQuestion: (state, action: PayloadAction<AddQuestionPayload>) => {
-      const findIndex = state.questions.findIndex(q => q.id === action.payload.questionId)
+      const findIndexQuestion = state.questions.findIndex(q => q.id === action.payload.questionId)
       const correctAnswerId: string[] = []
       const allAnswer: IAnswer[] = action.payload.answers.map(a => {
         const id = String(uuid.v4())
@@ -55,7 +55,7 @@ export const createTestSlice = createSlice({
         return {id, idQuestion: action.payload.questionId, textAnswer: a.answerText}
       })
       const question: ICurrentQuestion = {id: action.payload.questionId, allAnswer, correctAnswerId, textQuestion: action.payload.questionsText}
-      state.questions[findIndex] = question
+      state.questions[findIndexQuestion] = question
     },
     cleanQuestions: (state) => {
       state.questions = state.questions.map(q => ({

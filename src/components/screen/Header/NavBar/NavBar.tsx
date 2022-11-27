@@ -46,10 +46,10 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
         >
         <div className={cn(styles.navBarListMobile, styles.navBarListMobileOpened)}>
           <div className={styles.navBarItem}>
-            <MobileMenuSelect options={allCourseSelect} title='Курсы' />
+            <MobileMenuSelect options={allCourseSelect} title='Курсы' setVisibleMenu={setNavBarListVisible}/>
           </div>
           {user && <div className={styles.navBarItem}>
-            <MobileMenuSelect options={myLearnSelect} title='Мое обучение' />           
+            <MobileMenuSelect options={myLearnSelect} title='Мое обучение' setVisibleMenu={setNavBarListVisible}/>           
           </div>}
           {user && <div className={styles.navBarLink}>
             <Link to="/profile" className={styles.profileLink} onClick={()=>{setNavBarListVisible(false)}}>Личный кабинет</Link>

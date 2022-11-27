@@ -1,30 +1,63 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
+import { topicService } from '../../../../service/topics/topics.service'
+import { userService } from '../../../../service/user/user.service'
+import { ITopic } from '../../../../types/topic.types'
+import { IStatUser, IUser } from '../../../../types/user.types'
+import { getAdminAverageScore } from '../../../../utils/getAdminAvaregeScore'
+import { getCourseGraduates } from '../../../../utils/getCourseGraduates'
+import { getPercentTopicCovered } from '../../../../utils/getPercentTopicCovered'
 import StatisticsTable from '../../../ui/StatisticsTable/StatisticsTable'
 import styles from './AdminStatistics.module.scss'
 
+
 const AdminStatistics = () => {
-  const testStats = [{value: 1.2, isFilled: true}, {value: 6.1, isFilled: true}, {value: 6.3, isFilled: true}, {value: 1, isFilled: true}, {value: 6.5, isFilled: true}, {value: 0, isFilled: true}, {value: 9.3, isFilled: true}, {value: 3, isFilled: true}, {value: 0, isFilled: true}, {value: 8, isFilled: true}, {value: 4.7, isFilled: true}, {value: 10, isFilled: true}, {value: 0, isFilled: false},]
+  const [averageUsersScores, setAverageUsersScores] = useState<IStatUser[]>([])
+  const [countCoveredTopic, setCountCoveredTopic] = useState<IStatUser[]>([])
+  const [allUsers, setAllUsers] = useState<IUser[]>([])
+  const [allTopics, setAllTopics] = useState<ITopic[]>([])
+
+  useEffect(() => {
+    getAllUsers()
+    getAllTopics()
+  }, [])
+
+  useEffect(() => {
+    if(allTopics.length > 0 && allUsers.length > 0) {
+      setAverageUsersScores(getAdminAverageScore(allUsers, allTopics))
+      setCountCoveredTopic(getPercentTopicCovered(allUsers, allTopics))
+    }
+  }, [allUsers, allTopics])
+
+  const getAllUsers = async () => {
+    const {data: userData} = await userService.getAll()
+    setAllUsers(userData)
+  }
+
+  const getAllTopics = async () => {
+    const {data: topicData} = await topicService.getAll()
+    setAllTopics(topicData)
+  }
 
   return (
     <div className={styles.adminStatistics}>
       <div className={styles.containerGraphs}>
         <div className={styles.graph}>
           <h2 className={styles.title}>Средние баллы пользователей за&nbsp;каждую&nbsp;тему</h2>
-          <StatisticsTable data={testStats} color='pink'/>
+          <StatisticsTable data={averageUsersScores} color='pink' percent={false}/>
         </div>
         <div className={styles.graph}>
           <h2 className={styles.title}>Процент пользователей закончивших&nbsp;темы</h2>
-          <StatisticsTable data={testStats} color='violet'/>
+          <StatisticsTable data={countCoveredTopic} color='violet' percent={true}/>
         </div>
       </div>
       <div className={styles.containerStats}>
             <div className={styles.filledTests}>
-              <h2>Количество пройденных тестов</h2>
-              <h3>12</h3>
+              <h2>Количество пользователей</h2>
+              <h3>{allUsers.length}</h3>
             </div>
             <div className={styles.averageScore}>
-              <h2>Средний балл</h2>
-              <h3>3</h3>
+              <h2>Пользователи окончившие курс</h2>
+              <h3>{getCourseGraduates(allUsers, allTopics)}</h3>
             </div>
           </div>
     </div>

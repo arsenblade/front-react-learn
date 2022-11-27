@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {Fragment, useState} from 'react'
 import ReactPlayer from 'react-player'
 import Button from '../../../ui/Button/Button'
 import styles from './TopicReact.module.scss'
@@ -25,7 +25,7 @@ const TopicReact = () => {
     }
   }
 
-  const indexCurrentTopic = allTopics?.findIndex(topic => topic.id === currentTopic?.id)
+  const indexCurrentTopic = allTopics?.sort((a, b) => a.numberTopic - b.numberTopic).findIndex(topic => topic.id === currentTopic?.id)
 
   const handleClickTestBtn = () => {
     if(currentTopic && allTopics && indexCurrentTopic !== undefined && indexCurrentTopic !== -1) {
@@ -51,24 +51,27 @@ const TopicReact = () => {
 
   return (
     <div className={styles.topicReact}>
-    <h1 className={styles.title}>#{currentTopic?.numberTopic} {currentTopic?.titleTopic}</h1>
-    <div className={styles.containerPlayer}>
-      {currentTopic && 
-      <ReactPlayer
-      style={{margin: '0 auto', width: '100%'}} 
-      url={videoUrl || ''}
-      playing={isPlaying} 
-      playIcon={<button className={styles.playButton} 
-      onClick={() => setIsPlaying(true)}></button>} 
-      light={imgUrl || ''} 
-      controls={true}
-      volume={0.5}/>}
-    </div>
-    {currentTopic && indexCurrentTopic !== undefined && indexCurrentTopic !== -1 &&
-    <div className={styles.btnContainer}>
-        <Button onClick={() => handleClickBack()} className={cn(styles.btn, styles.btnBack)} color='White' disabled={indexCurrentTopic < 1}>Назад</Button>
-        <Button onClick={() => handleClickTestBtn()} className={cn(styles.btn, styles.btnNext)} color='Pink'>Перейти к заданию</Button>
-    </div>}
+      {!isLoadingAllTopics && !isLoadingCurrentTopic && currentTopic && allTopics &&       
+      <div className={styles.loadingAnimation}>
+        <h1 className={styles.title}>#{currentTopic?.numberTopic} {currentTopic?.titleTopic}</h1>
+        <div className={styles.containerPlayer}>
+          {currentTopic && 
+          <ReactPlayer
+          style={{margin: '0 auto', width: '100%'}} 
+          url={videoUrl || ''}
+          playing={isPlaying} 
+          playIcon={<button className={styles.playButton} 
+          onClick={() => setIsPlaying(true)}></button>} 
+          light={imgUrl || ''} 
+          controls={true}
+          volume={0.5}/>}
+        </div>
+        {currentTopic && indexCurrentTopic !== undefined && indexCurrentTopic !== -1 &&
+        <div className={styles.btnContainer}>
+          <Button onClick={() => handleClickBack()} className={cn(styles.btn, styles.btnBack)} color='White' disabled={indexCurrentTopic < 1}>Назад</Button>
+          <Button onClick={() => handleClickTestBtn()} className={cn(styles.btn, styles.btnNext)} color='Pink'>Перейти к заданию</Button>
+        </div>}
+      </div>}
   </div>
   )
 }

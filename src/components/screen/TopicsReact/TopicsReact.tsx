@@ -1,21 +1,25 @@
 import React from 'react'
+import { ITopic } from '../../../types/topic.types'
 import SliderThemeDesktop from '../../ui/SliderTheme/SliderThemeDesktop/SliderThemeDesktop'
-import SliderThemeMobile from '../../ui/SliderTheme/SliderThemeMobile/SliderThemeMobile'
 import styles from './TopicsReact.module.scss'
 import { useTopicsReact } from './useTopicReact'
 
 const TopicsReact = () => {
   const {data, isLoading} = useTopicsReact()
+  let sortAllTopics: ITopic[] = []
+  if(data) {
+    sortAllTopics = data.sort((a, b) => a.numberTopic - b.numberTopic)
+  }
 
   return (
     <div className={styles.topicsReact}>
-      <h1 className={styles.title}>Курс React – разработчик</h1>
-      <div className={styles.sliderDesktop}>
-        <SliderThemeDesktop sliders={data || []} />
-      </div>
-      <div className={styles.sliderMobile}>
-        <SliderThemeMobile sliders={data || []} />
-      </div>
+      {!isLoading && data && 
+      <div className={styles.loadingAnimation}>
+        <h1 className={styles.title}>Курс React – разработчик</h1>
+        <div className={styles.sliderDesktop}>
+          <SliderThemeDesktop sliders={sortAllTopics || []} />
+        </div>
+      </div>}
     </div>
   )
 }
