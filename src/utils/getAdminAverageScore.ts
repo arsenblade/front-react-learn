@@ -3,7 +3,6 @@ import { IPointTest, IStatUser, IUser } from "../types/user.types";
 
 export const getAdminAverageScore = (allUsers: IUser[], allTopics: ITopic[]) => {
   const sortAllTopics = allTopics.sort((a, b) => a.numberTopic - b.numberTopic)
-  console.log(allUsers, allTopics)
   const dictionaryTopics = new Map()
   sortAllTopics.forEach(topic => {
     dictionaryTopics.set(topic.relatedQuestionsId, {idTest: topic.relatedQuestionsId, points: 0})

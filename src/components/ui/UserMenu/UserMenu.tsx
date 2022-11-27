@@ -16,7 +16,7 @@ const UserMenu:FC<IUserMenu> = ({options, isAdmin}) => {
 
   const handleClickOption = (option: IOption) => {
     if(option.value === 'personal-area') {
-      navigate('/profile')
+      navigate('/profile/settings')
     }
     if(option.value === 'admin-panel') {
       navigate('/manage/statistics')

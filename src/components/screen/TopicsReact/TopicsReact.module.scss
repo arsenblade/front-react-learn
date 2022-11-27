@@ -48,20 +48,6 @@
       font-size: 28px;
     }
   }
-
-  .sliderDesktop {
-    // @media(max-width: 600px) {
-    //   display: none;
-    // }
-  }
-
-  .sliderMobile {
-    display: none;
-
-    @media(max-width: 600px) {
-      display: block;
-    }
-  }
 }
 
 .loadingAnimation {

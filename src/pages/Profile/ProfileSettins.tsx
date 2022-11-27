@@ -1,10 +1,10 @@
 import React from 'react'
 import Profile from '../../components/screen/Profile/Profile'
 
-const ProfilePage = () => {
+const ProfileSettingsPage = () => {
   return (
-    <Profile />
+    <Profile type='settings' />
   )
 }
 
-export default ProfilePage
+export default ProfileSettingsPage
