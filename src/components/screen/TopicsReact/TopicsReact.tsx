@@ -1,4 +1,5 @@
 import React from 'react'
+import { useActions } from '../../../hooks/useActions'
 import { ITopic } from '../../../types/topic.types'
 import SliderThemeDesktop from '../../ui/SliderTheme/SliderThemeDesktop/SliderThemeDesktop'
 import styles from './TopicsReact.module.scss'

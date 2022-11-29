@@ -9,6 +9,7 @@ import { useAuth } from '../../../../hooks/useAuth';
 import MobileMenuSelect from '../../../ui/MobileMenuSelect/MobileMenuSelect';
 import { useActions } from '../../../../hooks/useActions';
 import { CSSTransition } from 'react-transition-group';
+import {motion} from 'framer-motion'
 
 interface INavBarProps {
   Auth: boolean
@@ -18,6 +19,19 @@ interface IMenuOptions {
   value: string,
   label: string
 }
+
+const navSelectAnimation = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2}
+  })
+}
+
 
 const allCourseSelect: IOption[] = [{label: 'Курс - реакт разработчик', value: 'react-developer-course', link: '/'}]
 
@@ -64,10 +78,15 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
         </div>
       </CSSTransition>
       <div className={cn(styles.navBarListDesktop)}>
-          <div className={styles.selectContainer}>
+          <motion.div className={styles.selectContainer}         
+          initial='hidden'
+          whileInView='visible'
+          viewport={{amount: 0.2, once: true}}
+          variants={navSelectAnimation}
+          custom={1}>
             <Select options={allCourseSelect} placeholder='Курсы'/>
             <Select options={myLearnSelect} placeholder='Мое обучение'/>
-          </div>
+          </motion.div>
           {user && <div className={styles.userMenu}>
             <UserMenu isAdmin={user.isAdmin} options={user.isAdmin === true ? adminMenuItems : userMenuItems} onChange={setValueMySettings} value={valueMySettings}/>
           </div>}

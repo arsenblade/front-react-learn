@@ -1,20 +1,59 @@
 import React from 'react'
 import Button from '../../../ui/Button/Button'
 import styles from './PaymentCourse.module.scss'
+import {motion} from 'framer-motion'
+
+const titleAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  }
+}
+
+const contentAnimation = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  }
+}
 
 const PaymentCourse = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.paymentCourse}>
-        <h2 className={styles.title}>Записаться и оплатить курс
-        «React-разработчик»</h2>
-        <div className={styles.containerPrice}>
+      <motion.div className={styles.paymentCourse}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{amount: 0.8, once: true}} 
+      style={{overflow: 'hidden'}}>
+        <motion.h2 className={styles.title}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.4, once: true}}
+        variants={titleAnimation}
+        >Записаться и оплатить курс
+        «React-разработчик»</motion.h2>
+        <motion.div className={styles.containerPrice}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{amount: 0.6, once: true}}
+          variants={contentAnimation}
+        >
           <h2 className={styles.price}>1999</h2>
           <span className={styles.clarification}>₽ в месяц</span>
           <span className={styles.priceNoDiscount}>3999₽</span>
-        </div>
-        <Button className={styles.btn} color='Pink'>Оплатить</Button>
-      </div>
+        </motion.div>
+        <Button  
+        className={styles.btn} color='Pink'         
+        variants={titleAnimation}>Оплатить</Button>
+      </motion.div>
     </div>
   )
 }

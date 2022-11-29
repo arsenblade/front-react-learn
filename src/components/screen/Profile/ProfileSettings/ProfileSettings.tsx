@@ -1,14 +1,37 @@
 import { useEffect, useState} from 'react'
 import Button from '../../../ui/Button/Button'
 import FormInput from '../../../ui/FormInput/FormInput'
-import styles from './ProfileContent.module.scss'
+import styles from './ProfileSettings.module.scss'
 import cn from 'classnames'
 import { IUser } from '../../../../types/user.types'
 import { userService } from '../../../../service/user/user.service'
 import { useAuth } from '../../../../hooks/useAuth'
 import { MyToast } from '../../../ui/MyToast/MyToast'
 import { Link, useLocation } from 'react-router-dom'
+import {motion} from 'framer-motion'
 const photoUser = require('../../../../assets/img/author-img.png')
+
+const profileAnimation = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  }
+}
+
+const fieldAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  }
+}
 
 
 const ProfileSettings = () => {
@@ -43,8 +66,21 @@ const ProfileSettings = () => {
   return (
     <div className={styles.profileSettings}>
       <div className={styles.containerImg}>
-        <img className={styles.img} width={290} height={290} src={photoUser} alt='Фото пользователя.' />
-        <h2 className={styles.title}>{currentUser?.name || ''}</h2>
+        <motion.img className={styles.img} 
+        width={290} 
+        height={290} 
+        variants={profileAnimation}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+        src={photoUser} 
+        alt='Фото пользователя.' />
+        <motion.h2 className={styles.title}
+          variants={profileAnimation}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{amount: 0.2, once: true}}
+        >{currentUser?.name || ''}</motion.h2>
         <div className={styles.containerLink}>
         <Link className={cn(styles.link, styles.settings, {
           [styles.currentActiveSettings]: pathname === '/profile/settings'
@@ -58,7 +94,13 @@ const ProfileSettings = () => {
         ><span>Статистика</span></Link>
         </div>
       </div>
-      <div className={styles.userSettings}>
+      <motion.div className={styles.userSettings}
+        variants={fieldAnimation}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+        style={{overflow: 'hidden'}}
+      >
         <div className={styles.containerField}>
           <span>Имя</span>
           <FormInput className={styles.field} onChange={(e) => setUserName(e.target.value)} value={userName}/>
@@ -72,7 +114,7 @@ const ProfileSettings = () => {
           <FormInput className={styles.field} onChange={(e) => setUserPassword(e.target.value)} value={userPassword} type='password'/>
         </div>
         <Button className={styles.btn} color='Pink' onClick={() => updateUser()}>Сохранить</Button>
-      </div>
+      </motion.div>
   </div>
   )
 }

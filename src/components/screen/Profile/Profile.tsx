@@ -1,10 +1,9 @@
-import React, {useState, FC} from 'react'
-import ProfileContent from './ProfileContent/ProfileSettings'
+import { FC } from 'react'
 import ProfileHeader from './ProfileHeader/ProfileHeader'
 import styles from './Profile.module.scss'
 import Footer from '../Footer/Footer'
 import ProfileStatistics from './ProfileStats/ProfileStatistics'
-import ProfileSettings from './ProfileContent/ProfileSettings'
+import ProfileSettings from './ProfileSettings/ProfileSettings'
 
 interface ProfileProps {
   type: 'statistics' | 'settings'

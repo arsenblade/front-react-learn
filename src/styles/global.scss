@@ -185,10 +185,68 @@ a {
     height: 100vh;
     opacity: 1; 
   }
-  50%{
-  }
   100% {
     height: 0px;
     padding-bottom: 0;
+  }
+}
+
+.classNameBackAnimation-enter-active {
+  animation: enter-back-animation .2s forwards;
+}
+
+.classNameBackAnimation-exit-active {
+  animation: exit-back-animation .2s forwards;
+}
+
+@keyframes enter-back-animation {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-back-animation {
+  0% {
+    transform: translateX(0);
+    opacity: 1; 
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0; 
+  }
+}
+
+.classNameNextAnimation-enter-active {
+  animation: enter-next-animation .2s forwards;
+}
+
+.classNameNextAnimation-exit-active {
+  animation: exit-next-animation .2s forwards;
+}
+
+@keyframes enter-next-animation {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-next-animation {
+  0% {
+    transform: translateX(0);
+    opacity: 1; 
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0; 
   }
 }

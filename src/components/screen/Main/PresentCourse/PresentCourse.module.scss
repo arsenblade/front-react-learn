@@ -10,7 +10,6 @@
   max-width: 1440px;
   color: white;
   margin-bottom: 50px;
-  animation: loading-animation 0.4s forwards;
 
   .infoCourse {
     z-index: 2;
@@ -236,16 +235,5 @@
     width: 200px;
     height: 200px;
     bottom: 20%;
-  }
-}
-
-@keyframes loading-animation {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

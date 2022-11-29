@@ -4,12 +4,12 @@ import styles from './Select.module.scss'
 import cn from 'classnames'
 import { CSSTransition } from 'react-transition-group'
 import { useNavigate } from 'react-router-dom'
-import { getClassAnimation } from '../../../utils/getClassAnimation'
+import { getClassAnimationList } from '../../../utils/getClassAnimation'
 
 
 const Select:FC<ISelect> = ({options, placeholder}) => {
   const [isVisibleDropdown, setIsVisibleDropdown] = useState<undefined | 'visible' | 'invisible'>()
-  const classAnimation = getClassAnimation(options.length)
+  const classAnimation = getClassAnimationList(options.length)
   const navigate = useNavigate()
 
 
