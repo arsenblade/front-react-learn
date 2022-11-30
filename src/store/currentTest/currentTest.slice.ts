@@ -11,8 +11,8 @@ const initialState: IInitialStateCurrentTest  = {
   allQuestions: getStoreLocal<ICurrentQuestion[]>('AllQuestions'),
   currentQuestion: getStoreLocal<ICurrentQuestion>('CurrentQuestion'),
   allAnswersUser: getStoreLocal<IAnswerUser[]>('allAnswersUser'),
-  currentTopicTitle: localStorage.getItem('currentTopic'),
-  idTest: getStoreLocal<string>('idTest'),
+  currentTopicTitle: localStorage.getItem('currentTopicTitle'),
+  idTest: localStorage.getItem('idTest'),
   nextTopicId:  localStorage.getItem('nextTopicId'),
 }
 
@@ -49,6 +49,8 @@ export const currentTestSlice = createSlice({
       localStorage.removeItem('CurrentQuestion')
       localStorage.removeItem('currentTopicTitle')
       localStorage.removeItem('idTest')
+      localStorage.removeItem('nextTopicId')
+      localStorage.removeItem('allAnswersUser')
     },
   },
   extraReducers: (builder) => {

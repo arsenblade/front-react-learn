@@ -246,6 +246,7 @@
         display: flex;
         column-gap: 40px;
         align-items: flex-start;
+        justify-content: center;
         margin: 0 auto;
 
         @media(max-width: $tabletWidth) {

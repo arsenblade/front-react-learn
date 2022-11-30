@@ -1,6 +1,7 @@
-import { FC, ReactNode, AllHTMLAttributes } from 'react'
+import { FC, ReactNode, forwardRef } from 'react'
 import cn from 'classnames'
 import styles from './Button.module.scss'
+import {motion} from 'framer-motion'
 
 interface IButton {
   children: ReactNode
@@ -10,17 +11,17 @@ interface IButton {
   onClick?: () => void 
 }
 
-const Button:FC<IButton> = ({color, className, children, onClick, disabled}) => {
+const Button = forwardRef<HTMLDivElement, IButton>(({color, className, children, onClick, disabled}, ref) => {
 
   return (
-    <div className={cn(styles.btn, {
+    <div  ref={ref} className={cn(styles.btn, {
       [styles.btnWhite]: color === 'White',
       [styles.btnPink]: color === 'Pink',
       [`${className}`]: className && className,
       [styles.disabled]: disabled,
       [styles.noDisabled]: !disabled,
     })}
-    onClick={() => onClick && !disabled && onClick()}
+    onClick={() => onClick && !disabled && onClick()} 
     >
       {children}
       <span className={styles.spanOne}></span>
@@ -29,6 +30,6 @@ const Button:FC<IButton> = ({color, className, children, onClick, disabled}) => 
       <span className={styles.spanFour}></span>
     </div>
   )
-}
+})
 
-export default Button
+export default motion(Button)

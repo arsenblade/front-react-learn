@@ -2,8 +2,10 @@ import {FC} from 'react'
 import styles from './Footer.module.scss'
 import cn from 'classnames'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 const vkWhite = require('../../../assets/img/vk-white.png')
 const vkBlack = require('../../../assets/img/vk-black.png')
+
 
 interface IFooter {
   color: 'black' | 'white'
