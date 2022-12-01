@@ -1,12 +1,6 @@
-@import '../../../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
-.desktopContainer {
-
-  
-  @media(max-width: $tabletWidth) {
-    display: none;
-  }
-
+.container {
   .swiperCard {
     height: 500px;
   
@@ -23,16 +17,51 @@
       .img {
         border-radius: 10px;
       }
+
+      .videos {
+        border-radius: 10px;
+      }
+
+      .displayNoneImg {
+        display: none;
+      }
   
       .title {
         margin: 0;
+      }
+
+
+      .btnContainer {
+        margin-top: auto;
+
+        .btn {
+          width: 100%;
+          height: 60px;
+          font-size: 26px;
+        }
+      }
+
+    }
+  }
+}
+
+.desktopContainer {
+ 
+  @media(max-width: $tabletWidth) {
+    display: none;
+  }
+
+  .swiperCard {
+  
+    >div >div {
+  
+      .title {
         font-size: 26px;
 
         @media(max-width: 1200px) {
           font-size: 24px;
         }
 
-        
         @media(max-width: 1050px) {
           font-size: 22px;
         }
@@ -52,21 +81,14 @@
         }
       }
 
-      .btnContainer {
-        margin-top: auto;
+      .btn {
 
-        .btn {
-          width: 100%;
-          height: 60px;
-          font-size: 26px;
-  
-          @media(max-width: 1200px) {
-            font-size: 24px;
-          }
-  
-          @media(max-width: 1050px) {
-            font-size: 22px;
-          }
+        @media(max-width: 1200px) {
+          font-size: 24px;
+        }
+
+        @media(max-width: 1050px) {
+          font-size: 22px;
         }
       }
 
@@ -86,21 +108,8 @@
   }
 
   .swiperCard {
-    height: 500px;
   
     >div >div {
-      display: flex;
-      flex-direction: column;
-      row-gap: 20px;
-      color: black;
-      height: 500px;
-      border-radius: 10px;
-      background-color: $beige;
-      padding: 20px;
-  
-      .img {
-        border-radius: 10px;
-      }
   
       .title {
         margin: 0;
@@ -117,14 +126,8 @@
         }
       }
   
-      .btnContainer {
-        margin-top: auto;
-
-        .btn {
-          width: 100%;
-          height: 60px;
-          font-size: 24px;
-        }
+      .btn {
+        font-size: 24px;
       }
     }
   }
@@ -138,21 +141,8 @@
   }
 
   .swiperCard {
-    height: 500px;
   
     >div >div {
-      display: flex;
-      flex-direction: column;
-      row-gap: 20px;
-      color: black;
-      height: 500px;
-      border-radius: 10px;
-      background-color: $beige;
-      padding: 20px;
-  
-      .img {
-        border-radius: 10px;
-      }
   
       .title {
         margin: 0;
@@ -168,15 +158,9 @@
           font-size: 18px;
         }
       }
-  
-      .btnContainer {
-        margin-top: auto;
-
-        .btn {
-          width: 100%;
-          height: 60px;
-          font-size: 24px;
-        }
+      
+      .btn {
+        font-size: 24px;
       }
     }
   }
