@@ -4,6 +4,7 @@ export interface ITopic {
   pictureTopicUrl: string;
   videoUrl: string;
   relatedQuestionsId: string;
+  passedTopic: boolean;
   descriptionTopic: string;
   numberTopic: number
 }

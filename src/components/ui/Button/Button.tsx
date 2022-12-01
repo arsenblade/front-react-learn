@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 interface IButton {
   children: ReactNode
-  color: 'Pink' | 'White'
+  color: 'Pink' | 'White' | 'Violet'
   disabled?: boolean,
   className?: string,
   onClick?: () => void 
@@ -17,6 +17,7 @@ const Button = forwardRef<HTMLDivElement, IButton>(({color, className, children,
     <div  ref={ref} className={cn(styles.btn, {
       [styles.btnWhite]: color === 'White',
       [styles.btnPink]: color === 'Pink',
+      [styles.btnViolet]: color === 'Violet',
       [`${className}`]: className && className,
       [styles.disabled]: disabled,
       [styles.noDisabled]: !disabled,

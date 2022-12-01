@@ -29,6 +29,11 @@
   background-color: $pink;
 }
 
+.btnViolet {
+  color: white;
+  background-color: $violet;
+}
+
 .btn span {
   position: absolute;
   width: 25%;
@@ -46,6 +51,10 @@
 }
 
 .btnPink span {
+  background-color: $black;
+}
+
+.btnViolet span {
   background-color: $black;
 }
 

@@ -38,6 +38,7 @@ export const topicService = {
     const defaultTopic: ITopic = {
       id: uuid.v4(),
       descriptionTopic,
+      passedTopic: false,
       titleTopic,
       numberTopic: allTopics.length + 1,
       relatedQuestionsId: testOfTopic.id,

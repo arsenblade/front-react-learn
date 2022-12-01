@@ -199,6 +199,7 @@
       "descriptionTopic": "Descritpion Descritpion Descritpion Descritpion",
       "pictureTopicUrl": "react-poster.png",
       "videoUrl": "tor-4-video.mp4",
+      "passedTopic": false,
       "relatedQuestionsId": "2",
       "numberTopic": 2
     },
@@ -207,6 +208,7 @@
       "descriptionTopic": "dgegege",
       "titleTopic": "bfdbedgerger",
       "numberTopic": 1,
+      "passedTopic": false,
       "relatedQuestionsId": "55f8a600-d0fa-4b15-9e32-0fd401d4e0d7",
       "pictureTopicUrl": "react-poster.png",
       "videoUrl": "tor-4-video.mp4"
