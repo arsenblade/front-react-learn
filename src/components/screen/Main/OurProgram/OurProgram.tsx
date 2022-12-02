@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../ui/Button/Button'
 import InfoCircle from '../../../ui/Info-circle/InfoCircle'
+import {motion} from 'framer-motion'
 import styles from './OurProgram.module.scss'
 
 const OurProgram = () => {
