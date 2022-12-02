@@ -1,0 +1,99 @@
+@import '../../../styles/variables.scss';
+
+.modal {
+	display: flex;
+	position: fixed;
+	overflow: hidden;
+	cursor: pointer;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 300;
+	width: 101vw;
+	height: 101vh;
+	pointer-events: none;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	align-items:center;
+	justify-content: center;
+	transition: 1s ease-in-out; 
+	font-size: 120px;
+	@media(max-width: $tabletWidth) {
+		font-size: 85px;
+		max-width: $tabletWidth;
+	}
+	@media(max-width: 660px) {
+		font-size: 80px;
+		width: 105vw;
+		height: 110vh;
+	}
+	@media(max-width: 470px) {
+		font-size: 65px;
+		width: 110vw;
+		height: 110vh;
+	}
+	@media(max-width: 350px) {
+		font-size: 60px;
+		width: 110vw;
+		height: 110vh;
+	}		
+}	
+
+
+.modalActive {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.modalContainer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 100%;
+	transform: translate(-120vw, 0);
+	animation: modal-disappear 0.5s ease-in 1;
+}	
+
+.modalContainerActive {
+	animation: modal-appear 1s ease-out 1;
+	transform: translate(0, 0);
+}
+
+.modalContent {
+	padding: 0;
+	margin: 0;
+}
+
+.modalContentText {
+	margin-left: 0.2em;
+	font-size: 70%;
+	line-height: 100%;
+}
+
+.modalContentNumber {
+	font-size: 100%;
+	line-height: 93%;
+}
+
+@keyframes modal-appear {
+	0% {
+		transform: translate(120vw, 0);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes modal-disappear {
+	0% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-120vw, 0);
+		opacity: 0;
+	}
+}
