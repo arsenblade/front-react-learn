@@ -56,7 +56,6 @@ const SliderTheme:FC<SliderThemeProps> = ({sliders}) => {
 
     return () => {
       clearTimeout(handler)
-      setIsPlayVideo(false)
     }
   }, [activeIndex])
 
@@ -77,19 +76,24 @@ const SliderTheme:FC<SliderThemeProps> = ({sliders}) => {
           navigation={true}
           modules={[Pagination, Navigation]}
           className={styles.swiperCard}
-          onRealIndexChange={(element)=>setActiveIndex(element.activeIndex)}
+          onRealIndexChange={(element)=> {
+            setActiveIndex(element.activeIndex)   
+            setIsPlayVideo(false)}
+          }
         >
           {sliders.map((slider, idx) =>     
             <SwiperSlide key={slider.id}>
-              <img className={cn(styles.img, {[styles.displayNoneImg]: isPlayVideo === true && idx === activeIndex})} src={require('../../../assets/img/react-poster.png')} alt="Постер."/>
-              {isPlayVideo === true && idx === activeIndex && 
-                <motion.video className={styles.videos} 
-                transition={{duration: 0.5}}       
-                initial='hidden'
-                whileInView='visible'
-                viewport={{once: true}}
-                variants={personalProjectAnimation} 
-                src={changeVideoUrl(slider.videoUrl)} autoPlay muted loop/>}
+              <div className={styles.containerPoster}>
+                <img className={cn(styles.img, {[styles.displayNoneImg]: isPlayVideo === true && idx === activeIndex})} src={require('../../../assets/img/react-poster.png')} alt="Постер."/>
+                {isPlayVideo === true && idx === activeIndex && 
+                  <motion.video className={styles.videos} 
+                  transition={{duration: 0.5}}       
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{once: true}}
+                  variants={personalProjectAnimation} 
+                  src={changeVideoUrl(slider.videoUrl)} autoPlay muted loop/>}
+              </div>
               <h2 className={styles.title}>#{idx + 1} {slider.titleTopic}</h2>
               <p className={styles.description}>{slider.descriptionTopic}</p>
               <Link className={styles.btnContainer} to={slider.id}><Button className={styles.btn} color="Pink">Начать</Button></Link>
