@@ -13,13 +13,51 @@
       border-radius: 10px;
       background-color: $beige;
       padding: 20px;
+
+      .containerPoster {
+        min-height: 225px;
+
+        @media(max-width: 1350px) {
+          min-height: 210px;
+        }
+
+        @media(max-width: 1250px) {
+          min-height: 190px;
+        }
+
+        @media(max-width: 1150px) {
+          min-height: 170px;
+        }
+
+        @media(max-width: 1050px) {
+          min-height: 152px;
+        }
+
+        @media(max-width: 950px) {
+          min-height: 188px;
+        }
+
+        @media(max-width: 800px) {
+          min-height: 145px;
+        }
+
+        @media(max-width: 600px) {
+          min-height: 220px;
+        }
+
+        @media(max-width: $mobileOnlyWidth) {
+          min-height: 175px;
+        }
+      }
   
       .img {
         border-radius: 10px;
+        width: 100%;
       }
 
       .videos {
         border-radius: 10px;
+        width: 100%;
       }
 
       .displayNoneImg {
