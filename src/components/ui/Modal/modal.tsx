@@ -13,7 +13,6 @@ interface IModal {
 const Modal:FC<IModal> = ({className, active, setActive, count, text}) => {
 	let timer: string | number | NodeJS.Timeout | undefined;
 	if (active) {
-		console.log("вызов таймера");
 		timer = setTimeout(() => {setActive(false); clearTimeout(timer);}, 3000);
 		timer = undefined;
 	}	

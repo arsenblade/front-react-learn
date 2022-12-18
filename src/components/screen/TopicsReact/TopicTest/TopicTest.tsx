@@ -11,6 +11,8 @@ import { useAuth } from '../../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import { getClassAnimationTest } from '../../../../utils/getClassAnimation'
+import Modal from '../../../ui/Modal/modal'
+import { getPointUser } from '../../../../utils/getPointUser'
 
 const TopicTest = () => {
   const {allAnswersUser, allQuestions, currentQuestion, currentTopicTitle, idTest, nextTopicId} = useTypedSelector(state => state.currentTest)
@@ -18,6 +20,7 @@ const TopicTest = () => {
   const {addAnswer, changeCurrentQuestion, cleanCurrentQuestion} = useActions()
   const [typeQuestionAnimation, setTypeQuestionAnimation] = useState<'back' | 'next' | 'current'>('current')
   const [isQuestionAnimation, setIsQuestionAnimation] = useState<boolean>(true)
+  const [isViewModal, setIsViewModal] = useState<boolean>(false)
   const {user} = useAuth()
   const navigate = useNavigate()
 
@@ -102,13 +105,19 @@ const TopicTest = () => {
 
       if(userAnswers) {
         userTest.saveResultsTest(user.id, idTest, userAnswers, allQuestions)
-        cleanCurrentQuestion()
+        setIsViewModal(true)
 
         if(nextTopicId === 'lastTopic') {
-          navigate('/topics/react')
+          setTimeout(() => {
+            cleanCurrentQuestion()
+            navigate('/topics/react')
+          }, 3500)
         }
         else {
-          navigate(`/topics/react/${nextTopicId}`)
+          setTimeout(() => {
+            cleanCurrentQuestion()
+            navigate(`/topics/react/${nextTopicId}`)
+          }, 3500)
         }
       }
     }
@@ -144,6 +153,10 @@ const TopicTest = () => {
           </div>
         </div>
       </>}
+      <Modal active={isViewModal} setActive={setIsViewModal} count={Number(getPointUser(allQuestions || [], [...allAnswersUser || [], {
+          IdAnswersUser: idCheckedBtns,
+          idQuestion: currentQuestion?.id || ''
+        }]))} text='Баллов'/>
     </div>
   )
 }

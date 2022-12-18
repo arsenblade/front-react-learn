@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import ReactPlayer from 'react-player'
 import Button from '../../../ui/Button/Button'
 import styles from './TopicReact.module.scss'
@@ -10,12 +10,18 @@ import { useActions } from '../../../../hooks/useActions'
 
 const TopicReact = () => {
   const [isPlaying, setIsPlaying] =  useState(false)
+  const [isAnimation, setIsAnimation] =  useState(false)
   const {id} = useParams()
   const navigate = useNavigate()
   const {createCurrentTest, cleanCurrentQuestion} = useActions()
   const {allTopics, currentTopic, isLoadingAllTopics, isLoadingCurrentTopic} = useTopicReact(id || '')
   let imgUrl;
   let videoUrl;
+
+  useEffect(() => {
+    setIsAnimation(true)
+  }, [id])
+
   if(currentTopic) {
     try {
       imgUrl = require(`../../../../assets/img/${currentTopic.pictureTopicUrl}`)
@@ -45,19 +51,20 @@ const TopicReact = () => {
   const handleClickBack = () => {
     if(indexCurrentTopic && allTopics && indexCurrentTopic > 0) {
       const backTopic = allTopics[indexCurrentTopic - 1]
+      setIsAnimation(false)
       navigate(`/topics/react/${backTopic.id}`)
     }
   }
 
   return (
     <div className={styles.topicReact}>
-      {!isLoadingAllTopics && !isLoadingCurrentTopic && currentTopic && allTopics &&       
-      <div className={styles.loadingAnimation}>
-        <h1 className={styles.title}>#{currentTopic?.numberTopic} {currentTopic?.titleTopic}</h1>
+      {!isLoadingAllTopics && !isLoadingCurrentTopic && currentTopic && allTopics && isAnimation &&   
+      <div className={cn(styles.loadingAnimation)}>
+        <h1 className={styles.title}>#{currentTopic.numberTopic} {currentTopic.titleTopic}</h1>
         <div className={styles.containerPlayer}>
           {currentTopic && 
           <ReactPlayer
-          style={{margin: '0 auto', width: '100%'}} 
+          style={{margin: '0 auto', width: '100%'}}
           url={videoUrl || ''}
           playing={isPlaying} 
           playIcon={<button className={styles.playButton} 
