@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MyToast } from "../../components/ui/MyToast/MyToast";
 import { ICurrentQuestion } from "../../types/question.types";
-import { getStoreLocal} from "../../utils/getStoreLocal";
+import { getStoreLocal, getStoreLocalArray} from "../../utils/getStoreLocal";
 import { createCurrentTest } from "./currentTest.action";
 import { IAnswerUser, IInitialStateCurrentTest } from "./currentTest.interface";
 
 
 const initialState: IInitialStateCurrentTest  = {
   isLoading: false,
-  allQuestions: getStoreLocal<ICurrentQuestion[]>('AllQuestions'),
+  allQuestions: getStoreLocalArray<ICurrentQuestion[]>('AllQuestions'),
   currentQuestion: getStoreLocal<ICurrentQuestion>('CurrentQuestion'),
-  allAnswersUser: getStoreLocal<IAnswerUser[]>('allAnswersUser'),
+  allAnswersUser: getStoreLocalArray<IAnswerUser[]>('allAnswersUser'),
   currentTopicTitle: localStorage.getItem('currentTopicTitle'),
   idTest: localStorage.getItem('idTest'),
   nextTopicId:  localStorage.getItem('nextTopicId'),
@@ -26,7 +26,7 @@ export const currentTestSlice = createSlice({
     },
     addAnswer: (state, action: PayloadAction<{idQuestion: string, idAnswersUser: string[]}>) => {
       const indexAnswer = state.allAnswersUser?.findIndex(answer => answer.idQuestion === action.payload.idQuestion)
-
+      console.log(state.allAnswersUser)
       if(state.allAnswersUser && indexAnswer !== undefined && indexAnswer !== -1) {
         state.allAnswersUser[indexAnswer] = {
           IdAnswersUser: action.payload.idAnswersUser,
