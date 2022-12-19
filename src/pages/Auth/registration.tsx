@@ -1,8 +1,8 @@
-import Auth from "../../components/screen/Auth/Auth"
+import AuthMobile from "../../components/screen/Auth/AuthMobile/AuthMobile"
 
 const RegistrationPage = () => {
   return (
-    <Auth type = 'registration'/>
+    <AuthMobile type = 'registration'/>
   )
 }
 
