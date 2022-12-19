@@ -1,26 +1,25 @@
-
-import { FC} from 'react'
-
+import { FC, useEffect} from 'react'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../../hooks/useAuth'
 import {FieldValues, SubmitHandler, useForm} from 'react-hook-form'
-import Button from '../../ui/Button/Button'
-import styles from './Auth.module.scss'
+import styles from './AuthMobile.module.scss'
 import cn from 'classnames'
-import { validEmail } from '../../../utils/regex'
-import Header from '../Header/Header'
-import FormInput from '../../ui/FormInput/FormInput'
-import { useActions } from '../../../hooks/useActions'
+import { useActions } from '../../../../hooks/useActions'
+import { useAuth } from '../../../../hooks/useAuth'
+import useWindowDimensions from '../../../../hooks/useWindowDimensions'
+import FormInput from '../../../ui/FormInput/FormInput'
+import { validEmail } from '../../../../utils/regex'
+import Button from '../../../ui/Button/Button'
 
 interface IAuthProps {
   type: 'registration' | 'login'
 }
 
-const Auth:FC<IAuthProps> = ({type}) => {
+const AuthMobile:FC<IAuthProps> = ({type}) => {
   const {user, isLoading} = useAuth()
-  const {registration, login} = useActions()
+  const {registration, login, toggleModalAuth} = useActions()
   const navigate = useNavigate()
+  const {width} = useWindowDimensions()
 
   const {
     register,
@@ -34,6 +33,13 @@ const Auth:FC<IAuthProps> = ({type}) => {
   } = useForm({
     mode: "onBlur"
   })
+
+  useEffect(() => {
+    if(width >= 950) {
+      navigate('/')
+      toggleModalAuth({isVisible: true})
+    }
+  }, [width])
 
   const onSubmit:SubmitHandler<FieldValues> = (data) => {
     if(type === 'login') {
@@ -166,4 +172,4 @@ const Auth:FC<IAuthProps> = ({type}) => {
   )
 }
 
-export default Auth
+export default AuthMobile

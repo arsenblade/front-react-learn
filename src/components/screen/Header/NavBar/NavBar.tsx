@@ -44,7 +44,7 @@ const adminMenuItems: IMenuOptions[] = [ {label: 'Личный кабинет', 
 const NavBar:FC<INavBarProps> = ({Auth}) => {
  const [navBarListVisible, setNavBarListVisible] = useState<boolean>(false)
  const [valueMySettings, setValueMySettings] = useState<IMenuOptions | undefined>()
- const {logout} = useActions()
+ const {logout, toggleModalAuth} = useActions()
  const {user, isLoading} = useAuth()
 
 
@@ -85,15 +85,15 @@ const NavBar:FC<INavBarProps> = ({Auth}) => {
           variants={navSelectAnimation}
           custom={1}>
             <Select options={allCourseSelect} placeholder='Курсы'/>
-            <Select options={myLearnSelect} placeholder='Мое обучение'/>
+            {isLoading === false && user && <Select options={myLearnSelect} placeholder='Мое обучение'/>}
           </motion.div>
           {user && <div className={styles.userMenu}>
             <UserMenu isAdmin={user.isAdmin} options={user.isAdmin === true ? adminMenuItems : userMenuItems} onChange={setValueMySettings} value={valueMySettings}/>
           </div>}
           {isLoading === false && !user && 
-          <Link className={styles.authorizationLink} to='/login'>
+          <div className={styles.authorizationLink} onClick={() => toggleModalAuth({isVisible: true})}>
             Войти
-          </Link>}
+          </div>}
       </div>
       <button className={cn(styles.navToggle, {
         [styles.openBtn]: navBarListVisible === true,

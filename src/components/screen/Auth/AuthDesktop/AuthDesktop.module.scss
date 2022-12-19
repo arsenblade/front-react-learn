@@ -1,0 +1,88 @@
+@import '../../../../styles/variables.scss';
+
+.authContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  overflow-y: auto;
+  background-color: rgba($color: rgb(37, 37, 37), $alpha: .6);
+
+  @media(max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
+.authForm {
+  display: flex;
+  opacity: 0.9;
+  flex-direction: column;
+  color: white;
+  border: 4px solid black;
+  padding: 25px;
+  margin: auto;
+  background-color: $blackBackground;
+  border-radius: 10px;
+
+  .title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    width: 100%;
+  }
+
+  .input {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 24px;
+    width: 500px;
+  }
+
+  .errorText {
+    margin: 0;
+    margin-left: 10px;
+    color: #d50000;
+    font-size: 12px;
+  }
+  .btnContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .typeBtn {
+        margin: 0 auto;
+        cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+
+  .btnAuth {
+    margin: 0;
+    margin-left: auto;
+    width: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+}

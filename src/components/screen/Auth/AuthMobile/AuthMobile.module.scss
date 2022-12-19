@@ -1,10 +1,14 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
 .authContainer {
   position: relative;
   display: flex;
   flex-direction: column;
   margin: auto; 
+
+  @media(min-width: $tabletWidth) {
+    display: none;
+  }
 
   @media(max-width: $tabletWidth) {
     max-width: 800px;
