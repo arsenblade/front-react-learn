@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {FC, MutableRefObject} from 'react'
 import Button from '../../../ui/Button/Button'
 import styles from './PresentCourse.module.scss'
 import {motion} from 'framer-motion'
@@ -16,7 +16,13 @@ const presentAnimation = {
   }
 }
 
-const PresentCourse = () => {
+const PresentCourse:FC<{myRefToScroll: MutableRefObject<HTMLDivElement | null>}> = ({myRefToScroll}) => {
+
+  const clickScroll = () => {
+    myRefToScroll.current?.scrollIntoView()
+  }
+
+
   return (
     <motion.div 
       className={styles.presentCourse}
@@ -29,7 +35,7 @@ const PresentCourse = () => {
         <h1 className={styles.title}>Реакт – разработчик</h1>
         <p className={styles.description}>Освойте в асинхронном режиме навыки, необходимые для реакт-разработчика. Научитесь применять востребованные технологии и глубже разберитесь 
         в&nbsp;том&nbsp;,&nbsp;как&nbsp;всё устроено.</p>
-        <Button className={styles.btn} color='Pink'>Подробнее</Button>
+        <Button className={styles.btn} color='Pink' onClick={() => clickScroll()}>Подробнее</Button>
       </motion.div>
       <motion.img className={styles.img} variants={presentAnimation} width={559} height={405} src={logo} alt='Картинка программиста.'/>
     </motion.div>

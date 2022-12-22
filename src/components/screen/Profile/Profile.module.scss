@@ -1,8 +1,17 @@
 @import '../../../styles/variables.scss';
 
 .profile {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 168px);
+
+  @media(max-width: 1440px) {
+    min-height: calc(100vh - 145px);
+  }
+
   @media(max-width: $tabletWidth) {
-    margin-top: 120px;
+    padding-top: 140px;
+    min-height: 100vh;
   }
 
   .contentContainer {
@@ -30,5 +39,9 @@
     @media(max-width: 380px) {
       width: 380px;
     }
+  }
+
+  .footer {
+    flex: auto
   }
 }

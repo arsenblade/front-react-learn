@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './PersonalProject.module.scss'
 import {motion} from 'framer-motion'
-const projectVideo = require('../../../../assets/videos/tor-4-video.mp4')
+const projectVideo = require('../../../../assets/videos/first-class.mp4')
 
 const personalProjectAnimation = {
   hidden: {

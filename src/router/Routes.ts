@@ -4,6 +4,7 @@ import AdminStatisticsPage from "../pages/Admin/AdminStatistics";
 import LoginPage from "../pages/Auth/login";
 import RegistrationPage from "../pages/Auth/registration";
 import MainPage from "../pages/MainPage";
+import Page404 from "../pages/Page404/Page404";
 import ProfileSettingsPage from "../pages/Profile/ProfileSettins";
 import ProfileStatisticsPage from "../pages/Profile/ProfileStatistics";
 import TopicReactPage from "../pages/TopicsReact/TopicReact/TopicReact";
@@ -26,7 +27,8 @@ enum Routes {
   TOPIC_REACT_ROUTE = '/topics/react/:id',
   TOPIC_TEST_ROUTE = '/topics/test/:idTest',
   MANAGE_STATISTICS_ROUTE = '/manage/statistics',
-  MANAGE_CREATE_TOPIC_ROUTE = '/manage/create/topic'
+  MANAGE_CREATE_TOPIC_ROUTE = '/manage/create/topic',
+  PAGE_404 = '*'
 }
 
 export const publicRoutes: IRoute[] = [
@@ -41,6 +43,10 @@ export const publicRoutes: IRoute[] = [
   {
     path: Routes.REGISTRATION_ROUTE,
     Component: RegistrationPage
+  },
+  {
+    path: Routes.PAGE_404,
+    Component: Page404
   },
 ]
 

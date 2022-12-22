@@ -1,8 +1,17 @@
 @import '../../../styles/variables.scss';
 
 .admin {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 168px);
+
+  @media(max-width: 1440px) {
+    min-height: calc(100vh - 145px);
+  }
+
   @media(max-width: $tabletWidth) {
-    margin-top: 120px;
+    padding-top: 120px;
+    min-height: 100vh;
   }
 
   .adminContent {
@@ -28,5 +37,9 @@
     @media(max-width: 380px) {
       width: 380px;
     }
+  }
+
+  .footer {
+    flex: auto
   }
 }

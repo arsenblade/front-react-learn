@@ -21,7 +21,7 @@
     margin: 0 auto;
     padding: 0 20px;
     margin-bottom: 50px;
-    margin-top: 140px;
+    padding-top: 140px;
   }
 
   @media(max-width: 800px) {
@@ -30,7 +30,7 @@
 
   @media(max-width: 600px) {
     width: 460px;
-    margin-top: 135px;
+    padding-top: 135px;
   }
 
   @media(max-width: $mobileOnlyWidth) {

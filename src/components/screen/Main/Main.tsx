@@ -1,5 +1,4 @@
-import React from 'react'
-import { useActions } from '../../../hooks/useActions'
+import React, {useRef} from 'react'
 import Footer from '../Footer/Footer'
 import AfterLearnCourse from './AfterLearnCourse/AfterLearnCourse'
 import CourseAuthors from './CourseAuthors/CourseAuthors'
@@ -9,12 +8,15 @@ import PersonalProject from './PersonalProject/PersonalProject'
 import PresentCourse from './PresentCourse/PresentCourse'
 
 const Main = () => {
+  const scrollToRef = useRef<HTMLDivElement | null>(null)
+
+
 
   return (
     <>
-      <PresentCourse />
+      <PresentCourse myRefToScroll={scrollToRef}/>
       <AfterLearnCourse />
-      <OurProgram />
+      <OurProgram myRefToScroll={scrollToRef}/>
       <PersonalProject />
       <CourseAuthors />
       <PaymentCourse />

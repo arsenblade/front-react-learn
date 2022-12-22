@@ -18,7 +18,7 @@ const Profile:FC<ProfileProps> = ({type}) => {
         {type === 'settings' && <ProfileSettings />}
         {type === 'statistics' && <ProfileStatistics />}
       </div>
-      <Footer color='white' />
+      <Footer className={styles.footer} color='white' />
     </div>
   )
 }

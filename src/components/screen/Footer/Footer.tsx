@@ -9,13 +9,15 @@ const vkBlack = require('../../../assets/img/vk-black.png')
 
 interface IFooter {
   color: 'black' | 'white'
+  className?: string
 }
 
-const Footer:FC<IFooter> = ({color}) => {
+const Footer:FC<IFooter> = ({color, className}) => {
   return (
     <div className={cn(styles.container, {
       [styles.containerWhite]: color === 'white',
-      [styles.containerBlack]: color === 'black'
+      [styles.containerBlack]: color === 'black',
+      [`${className}`]: className && className
     })}>
       <div className={cn(styles.footer, {
         [styles.whiteFooter]: color === 'white',
