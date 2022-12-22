@@ -99,7 +99,7 @@ const AdminCreateTopic = () => {
       else {
         allQuestions.push(question)
       }
-      topicService.addTopic(allQuestions, valueTextDescription, valueTextQuestion)
+      topicService.addTopic(allQuestions, valueTextDescription, valueTextTitle)
       setValueTextQuestion('')
       setValueTextTitle('')
       setValueTextDescription('')

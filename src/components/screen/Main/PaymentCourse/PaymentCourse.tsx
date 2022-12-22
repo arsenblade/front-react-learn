@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../../../ui/Button/Button'
 import styles from './PaymentCourse.module.scss'
 import {motion} from 'framer-motion'
+import { MyToast } from '../../../ui/MyToast/MyToast'
 
 const titleAnimation = {
   hidden: {
@@ -46,13 +47,14 @@ const PaymentCourse = () => {
           viewport={{amount: 0.6, once: true}}
           variants={contentAnimation}
         >
-          <h2 className={styles.price}>1999</h2>
+          <h2 className={styles.price}>499</h2>
           <span className={styles.clarification}>₽ в месяц</span>
-          <span className={styles.priceNoDiscount}>3999₽</span>
+          <span className={styles.priceNoDiscount}>1999₽</span>
         </motion.div>
         <Button  
         className={styles.btn} color='Pink'         
-        variants={titleAnimation}>Оплатить</Button>
+        variants={titleAnimation}
+        onClick={() => MyToast('Пока нет возможности оплатить курс', false)}>Оплатить</Button>
       </motion.div>
     </div>
   )

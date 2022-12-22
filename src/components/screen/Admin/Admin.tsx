@@ -18,7 +18,7 @@ const Admin:FC<AdminProps> = ({type}) => {
         {type === 'createTopic' && <AdminCreateTopic />}
         {type === 'statistics' && <AdminStatistics />}
       </div>
-      <Footer color='white' />
+      <Footer className={styles.footer} color='white' />
     </div>
   )
 }
