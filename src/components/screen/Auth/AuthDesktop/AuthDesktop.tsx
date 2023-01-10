@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
 import { useActions } from '../../../../hooks/useActions'
 import { useAuth } from '../../../../hooks/useAuth'
 import FormInput from '../../../ui/FormInput/FormInput'
@@ -16,7 +15,6 @@ const AuthDesktop = () => {
   const {user, isLoading} = useAuth()
   const {isVisible} = useTypedSelector(state => state.authModal)
   const {registration, login, toggleModalAuth} = useActions()
-  const navigate = useNavigate()
   const {width} = useWindowDimensions()
 
   const {
@@ -29,7 +27,7 @@ const AuthDesktop = () => {
     reset,
     getValues
   } = useForm({
-    mode: "onBlur"
+    mode: "onChange"
   })
 
   useEffect(() => {

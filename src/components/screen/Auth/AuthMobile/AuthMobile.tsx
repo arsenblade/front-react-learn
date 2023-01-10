@@ -31,7 +31,7 @@ const AuthMobile:FC<IAuthProps> = ({type}) => {
     reset,
     getValues
   } = useForm({
-    mode: "onBlur"
+    mode: "onChange"
   })
 
   useEffect(() => {
@@ -153,7 +153,7 @@ const AuthMobile:FC<IAuthProps> = ({type}) => {
             <div className={styles.btnContainer}>
               <Link to='/registration'>Зарегистрироваться</Link>
               <button type='submit' disabled={!isValid}>
-                <Button className={styles.btnAuth} children={'Войти'} color={'Pink'}/>
+                <Button className={styles.btnAuth} children={'Войти'} color={'Pink'} disabled={!isValid}/>
               </button>            
             </div>
           }
@@ -161,7 +161,7 @@ const AuthMobile:FC<IAuthProps> = ({type}) => {
             <div className={styles.btnContainer}>
               <Link to='/login'>Войти</Link>
               <button type='submit' disabled={!isValid}>
-                <Button className={styles.btnAuth} children={'Зарегистрироваться'} color={'Pink'}/>
+                <Button className={styles.btnAuth} children={'Зарегистрироваться'} color={'Pink'} disabled={!isValid}/>
               </button>
             </div>
           }
