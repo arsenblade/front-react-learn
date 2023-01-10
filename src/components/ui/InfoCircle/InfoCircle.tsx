@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, ReactNode } from 'react'
+import { FC } from 'react'
 import styles from './InfoCircle.module.scss'
 import cn from 'classnames'
 const circlePinkImg = require('../../../assets/img/circle-pink.png')

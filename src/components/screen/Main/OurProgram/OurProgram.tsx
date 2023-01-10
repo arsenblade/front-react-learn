@@ -1,9 +1,9 @@
-import React, {FC, MutableRefObject} from 'react'
+import {FC, MutableRefObject} from 'react'
 import Button from '../../../ui/Button/Button'
-import InfoCircle from '../../../ui/Info-circle/InfoCircle'
 import {motion} from 'framer-motion'
 import styles from './OurProgram.module.scss'
 import { MyToast } from '../../../ui/MyToast/MyToast'
+import InfoCircle from '../../../ui/InfoCircle/InfoCircle'
 
 const ourProgramAnimation = {
   hidden: {
