@@ -23,21 +23,20 @@ const Footer:FC<IFooter> = ({color, className}) => {
         [styles.whiteFooter]: color === 'white',
         [styles.blackFooter]: color === 'black'
       })}>
-        <h2>Сайт сделан:</h2>
+        <h2>Сайт сделан</h2>
         <div className={styles.containerLink}>
-          <Link className={styles.iconLink} to='vk.com'>
+          <a className={styles.iconLink} href='https://vk.com/arsenkhuranovran' target="_blank">
             {color === 'black' && <img src={vkWhite} alt="vk"/>}
             {color === 'white' && <img src={vkBlack} alt="vk"/>}
-          </Link>
-          <Link className={styles.iconLink} to='vk.com'>
+          </a>
+          <a className={styles.iconLink} href='https://vk.com/id243699437' target="_blank">
             {color === 'black' && <img src={vkWhite} alt="vk"/>}
             {color === 'white' && <img src={vkBlack} alt="vk"/>}
-
-          </Link>
-          <Link className={styles.iconLink} to='vk.com'>
+          </a>
+          <a className={styles.iconLink} href='https://vk.com/id398089965' target="_blank">
             {color === 'black' && <img src={vkWhite} alt="vk"/>}
             {color === 'white' && <img src={vkBlack} alt="vk"/>}
-          </Link>
+          </a>
         </div>
       </div>
     </div>

@@ -156,7 +156,7 @@ const TopicTest = () => {
       <Modal active={isViewModal} setActive={setIsViewModal} count={Number(getPointUser(allQuestions || [], [...allAnswersUser || [], {
           IdAnswersUser: idCheckedBtns,
           idQuestion: currentQuestion?.id || ''
-        }]))} text='Баллов'/>
+        }]))}/>
     </div>
   )
 }
