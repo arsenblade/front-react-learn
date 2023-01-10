@@ -49,13 +49,24 @@
     width: 481px;
   }
 
+  @media(max-width: 800px) {
+    flex-direction: column;
+    margin: 0 auto;
+    row-gap: 10px;
+  }
+
   >h2 {
     margin: 0;
     margin-right: 20px;
     font-size: 32px;
 
     @media(max-width: $mobileOnlyWidth) {
-      font-size: 25px;
+      font-size: 28px;
+    }
+
+    @media(max-width: 800px) {
+      margin: 0;
+      font-size: 36px;
     }
     
     @media(min-width: $tabletWidth) {
@@ -79,6 +90,11 @@
     height: 74px;
   }
 
+  @media(max-width: 800px) {
+    width: 85px;
+    height: 85px;
+  }
+
   >img {
     width: 45px;
     height: 45px;
@@ -86,6 +102,11 @@
     @media(min-width: $tabletWidth) {
       width: 64px;
       height: 64px;
+    }
+
+    @media(max-width: 800px) {
+      width: 75px;
+      height: 75px;
     }
   }
 }

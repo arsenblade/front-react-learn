@@ -21,6 +21,16 @@
           "idUser": "1",
           "idTest": "edeccac7-2c93-409f-82b1-2be1c8fe8777",
           "points": 5
+        },
+        {
+          "idUser": 1,
+          "idTest": "aa9f8e87-8ab0-401b-a25f-17662ac53665",
+          "points": 1
+        },
+        {
+          "idUser": 1,
+          "idTest": "f1315e00-c7fc-4789-b045-5e302fda1b14",
+          "points": 3
         }
       ]
     }
