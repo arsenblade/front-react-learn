@@ -23,11 +23,13 @@
 
   @media(max-width: 600px) {
     width: 460px;
+    padding-top: 110px;
   }
 
   @media(max-width: $mobileOnlyWidth) {
     width: 380px;
     padding: 0 10px;
+    padding-top: 110px;
   }
 }
 
