@@ -16,7 +16,7 @@ const courseAuthorsAnimation = {
 
 const CourseAuthors = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.courseAuthors}>
         <motion.h2 className={styles.title}
           initial='hidden'
@@ -63,7 +63,7 @@ const CourseAuthors = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -65,6 +65,8 @@ const AuthMobile:FC<IAuthProps> = ({type}) => {
     <div className={styles.authContainer}>
         <form className={cn(styles.authForm, {
         })} onSubmit={handleSubmit(onSubmit)}>
+          <h1>Email: arsen@mail.ru</h1>
+          <h1>Password: 123456</h1>
           <h1 className={styles.title}>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
 
           {type === 'registration' && 

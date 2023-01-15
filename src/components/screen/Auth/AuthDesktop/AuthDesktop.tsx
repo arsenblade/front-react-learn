@@ -59,6 +59,8 @@ const AuthDesktop = () => {
       isVisible ?
       <div className={styles.authContainer} onClick={() => toggleModalAuth({isVisible: false})}>
           <form className={cn(styles.authForm)} onSubmit={handleSubmit(onSubmit)} onClick={(e) => e.stopPropagation()}>
+            <h1>Email: arsen@mail.ru</h1>
+            <h1>Password: 123456</h1>
             <h1 className={styles.title}>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
 
             {type === 'registration' && 

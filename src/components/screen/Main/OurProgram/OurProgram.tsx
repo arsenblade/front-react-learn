@@ -16,13 +16,13 @@ const ourProgramAnimation = {
   }
 }
 
-const OurProgram:FC<{myRefToScroll: MutableRefObject<HTMLDivElement | null>}> = ({myRefToScroll}) => {
+const OurProgram = () => {
   return (
-    <motion.div className={styles.ourProgram}         
+    <motion.section className={styles.ourProgram}         
     initial='hidden'
     whileInView='visible'
     viewport={{amount: 0.5, once: true}}
-    ref={myRefToScroll}
+    id='ourProgram'
     style={{overflow: 'hidden'}}>
       <motion.div className={styles.contentContainer} variants={ourProgramAnimation}>
         <h2 className={styles.title}>Программа нашего курса</h2>
@@ -32,7 +32,7 @@ const OurProgram:FC<{myRefToScroll: MutableRefObject<HTMLDivElement | null>}> = 
       <motion.div className={styles.spinnerProgram} variants={ourProgramAnimation}>
         <InfoCircle />
       </motion.div>
-    </motion.div>
+    </motion.section>
   )
 }
 

@@ -8,15 +8,12 @@ import PersonalProject from './PersonalProject/PersonalProject'
 import PresentCourse from './PresentCourse/PresentCourse'
 
 const Main = () => {
-  const scrollToRef = useRef<HTMLDivElement | null>(null)
-
-
 
   return (
     <>
-      <PresentCourse myRefToScroll={scrollToRef}/>
+      <PresentCourse/>
       <AfterLearnCourse />
-      <OurProgram myRefToScroll={scrollToRef}/>
+      <OurProgram />
       <PersonalProject />
       <CourseAuthors />
       <PaymentCourse />

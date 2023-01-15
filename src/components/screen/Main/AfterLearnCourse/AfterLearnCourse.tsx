@@ -31,7 +31,7 @@ const AfterLearnCourse = () => {
   const [valueSalary, setValueSalary] = useState([40])
 
   return (
-    <div className={styles.afterLearnCourse}>
+    <section className={styles.afterLearnCourse}>
       <motion.div 
         className={styles.knowledgeAfterCourse}
         initial='hidden'
@@ -71,7 +71,7 @@ const AfterLearnCourse = () => {
           <RangeSlider values={valueSalary} setValues={setValueSalary}/>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   )
 }
 
